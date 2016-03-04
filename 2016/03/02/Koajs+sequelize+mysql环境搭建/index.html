@@ -4,37 +4,33 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Hexo</title>
+  <title>Koajs+sequelize+mysql环境搭建 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Koajs+sequelize+mysql环境搭建标签（空格分隔）： nodejs
-
-1.首先通过npm init 创建package.json文件
+  <meta name="description" content="1.首先通过npm init 创建package.json文件
 $ npm init
 2.安装Koajs$ npm install koa –save
 
-在根目录下创建一个app.js的文件12345678var koa = require(&apos;koa&apos;);var app = koa();app.use(funct">
+在根目录下创建一个app.js的文件12345678var koa = require(&apos;koa&apos;);var app = koa();app.use(function *()&amp;#123;    this.body = &apos;Hello Lxc&apos;;&amp;#">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2016/03/04/Koajs+sequelize+mysql环境搭建/index.html">
+<meta property="og:title" content="Koajs+sequelize+mysql环境搭建">
+<meta property="og:url" content="http://yoursite.com/2016/03/02/Koajs+sequelize+mysql环境搭建/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Koajs+sequelize+mysql环境搭建标签（空格分隔）： nodejs
-
-1.首先通过npm init 创建package.json文件
+<meta property="og:description" content="1.首先通过npm init 创建package.json文件
 $ npm init
 2.安装Koajs$ npm install koa –save
 
-在根目录下创建一个app.js的文件12345678var koa = require(&apos;koa&apos;);var app = koa();app.use(funct">
-<meta property="og:updated_time" content="2016-03-04T04:49:48.432Z">
+在根目录下创建一个app.js的文件12345678var koa = require(&apos;koa&apos;);var app = koa();app.use(function *()&amp;#123;    this.body = &apos;Hello Lxc&apos;;&amp;#">
+<meta property="og:updated_time" content="2016-03-04T06:52:01.213Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="Koajs+sequelize+mysql环境搭建标签（空格分隔）： nodejs
-
-1.首先通过npm init 创建package.json文件
+<meta name="twitter:title" content="Koajs+sequelize+mysql环境搭建">
+<meta name="twitter:description" content="1.首先通过npm init 创建package.json文件
 $ npm init
 2.安装Koajs$ npm install koa –save
 
-在根目录下创建一个app.js的文件12345678var koa = require(&apos;koa&apos;);var app = koa();app.use(funct">
+在根目录下创建一个app.js的文件12345678var koa = require(&apos;koa&apos;);var app = koa();app.use(function *()&amp;#123;    this.body = &apos;Hello Lxc&apos;;&amp;#">
   
+  
+    <link rel="icon" href="/favicon.png">
   
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -47,7 +43,7 @@ $ npm init
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
-			<img src="undefined" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			<img src="/lxchead.jpeg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
 			
 		</a>
 
@@ -65,11 +61,19 @@ $ npm init
 					<nav class="header-menu">
 						<ul>
 						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
 						</ul>
 					</nav>
 					<nav class="header-nav">
 						<div class="social">
 							
+								<a class="github" target="_blank" href="https://github.com/Lixucheng" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/3868834235" title="weibo">weibo</a>
+					        
 						</div>
 					</nav>
 				</section>
@@ -95,7 +99,7 @@ $ npm init
 		<header id="header" class="inner">
 			<div class="profilepic">
 			
-				<img src="undefined" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+				<img src="/lxchead.jpeg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
 			
 			</div>
 			<hgroup>
@@ -105,12 +109,20 @@ $ npm init
 			<nav class="header-menu">
 				<ul>
 				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
 		        <div class="clearfix"></div>
 				</ul>
 			</nav>
 			<nav class="header-nav">
 				<div class="social">
 					
+						<a class="github" target="_blank" href="https://github.com/Lixucheng" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/3868834235" title="weibo">weibo</a>
+			        
 				</div>
 			</nav>
 		</header>				
@@ -120,19 +132,41 @@ $ npm init
       <div class="body-wrap"><article id="post-Koajs+sequelize+mysql环境搭建" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/04/Koajs+sequelize+mysql环境搭建/" class="article-date">
-  	<time datetime="2016-03-04T04:50:27.450Z" itemprop="datePublished">2016-03-04</time>
+      <a href="/2016/03/02/Koajs+sequelize+mysql环境搭建/" class="article-date">
+  	<time datetime="2016-03-02T12:10:33.000Z" itemprop="datePublished">2016-03-02</time>
 </a>
     </div>
   
   <div class="article-inner">
     
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Koajs+sequelize+mysql环境搭建
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/nodejs-javascript/">nodejs javascript</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Koajs-sequelize-mysql环境搭建"><a href="#Koajs-sequelize-mysql环境搭建" class="headerlink" title="Koajs+sequelize+mysql环境搭建"></a>Koajs+sequelize+mysql环境搭建</h1><p>标签（空格分隔）： nodejs</p>
-<hr>
-<h3 id="1-首先通过npm-init-创建package-json文件"><a href="#1-首先通过npm-init-创建package-json文件" class="headerlink" title="1.首先通过npm init 创建package.json文件"></a>1.首先通过npm init 创建package.json文件</h3><blockquote>
+        <h3 id="1-首先通过npm-init-创建package-json文件"><a href="#1-首先通过npm-init-创建package-json文件" class="headerlink" title="1.首先通过npm init 创建package.json文件"></a>1.首先通过npm init 创建package.json文件</h3><blockquote>
 <p>$ npm init</p>
 <h3 id="2-安装Koajs"><a href="#2-安装Koajs" class="headerlink" title="2.安装Koajs"></a>2.安装Koajs</h3><p>$ npm install koa –save</p>
 </blockquote>
@@ -166,18 +200,18 @@ $ npm init
     
 <nav id="article-nav">
   
-    <a href="/2016/03/04/linux下mysql的安装与简单操作/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/03/02/Csharp生成条形码/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          (no title)
+          C#生成条形码
         
       </div>
     </a>
   
   
-    <a href="/2016/03/04/jQuery ajax 简单使用/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
+    <a href="/2016/03/02/OpenXml 操作Word Excel/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">OpenXml 操作Word Excel</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -189,6 +223,26 @@ $ npm init
 
 
 
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Koajs+sequelize+mysql环境搭建" data-title="Koajs+sequelize+mysql环境搭建" data-url="http://yoursite.com/2016/03/02/Koajs+sequelize+mysql环境搭建/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
@@ -208,10 +262,12 @@ $ npm init
 </footer>
     </div>
     
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
 
 <script>
 	var yiliaConfig = {
-		fancybox: undefined,
+		fancybox: true,
 		mathjax: undefined,
 		animate: undefined,
 		isHome: false,

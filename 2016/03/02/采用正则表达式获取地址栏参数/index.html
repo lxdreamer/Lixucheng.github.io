@@ -4,25 +4,21 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>Hexo</title>
+  <title>采用正则表达式获取地址栏参数 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="采用正则表达式获取地址栏参数标签（空格分隔）： javascript
-
-1.采用正则表达式获取地址栏参数：根据url和参数名获取参数值12345678function GetQueryString(name)&amp;#123;     var reg = new RegExp(&quot;(^|&amp;amp;)&quot;+ name +&quot;=([^&amp;amp;]*)(&amp;amp;|$)&quot;);     var r = window.">
+  <meta name="description" content="1.采用正则表达式获取地址栏参数：根据url和参数名获取参数值12345678function GetQueryString(name)&amp;#123;     var reg = new RegExp(&quot;(^|&amp;amp;)&quot;+ name +&quot;=([^&amp;amp;]*)(&amp;amp;|$)&quot;);     var r = window.location.search.substr(1).match(reg)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2016/03/04/采用正则表达式获取地址栏参数/index.html">
+<meta property="og:title" content="采用正则表达式获取地址栏参数">
+<meta property="og:url" content="http://yoursite.com/2016/03/02/采用正则表达式获取地址栏参数/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="采用正则表达式获取地址栏参数标签（空格分隔）： javascript
-
-1.采用正则表达式获取地址栏参数：根据url和参数名获取参数值12345678function GetQueryString(name)&amp;#123;     var reg = new RegExp(&quot;(^|&amp;amp;)&quot;+ name +&quot;=([^&amp;amp;]*)(&amp;amp;|$)&quot;);     var r = window.">
-<meta property="og:updated_time" content="2016-03-02T06:24:14.103Z">
+<meta property="og:description" content="1.采用正则表达式获取地址栏参数：根据url和参数名获取参数值12345678function GetQueryString(name)&amp;#123;     var reg = new RegExp(&quot;(^|&amp;amp;)&quot;+ name +&quot;=([^&amp;amp;]*)(&amp;amp;|$)&quot;);     var r = window.location.search.substr(1).match(reg)">
+<meta property="og:updated_time" content="2016-03-04T06:51:44.624Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="采用正则表达式获取地址栏参数标签（空格分隔）： javascript
-
-1.采用正则表达式获取地址栏参数：根据url和参数名获取参数值12345678function GetQueryString(name)&amp;#123;     var reg = new RegExp(&quot;(^|&amp;amp;)&quot;+ name +&quot;=([^&amp;amp;]*)(&amp;amp;|$)&quot;);     var r = window.">
+<meta name="twitter:title" content="采用正则表达式获取地址栏参数">
+<meta name="twitter:description" content="1.采用正则表达式获取地址栏参数：根据url和参数名获取参数值12345678function GetQueryString(name)&amp;#123;     var reg = new RegExp(&quot;(^|&amp;amp;)&quot;+ name +&quot;=([^&amp;amp;]*)(&amp;amp;|$)&quot;);     var r = window.location.search.substr(1).match(reg)">
   
+  
+    <link rel="icon" href="/favicon.png">
   
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -35,7 +31,7 @@
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
 			
-			<img src="undefined" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+			<img src="/lxchead.jpeg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
 			
 		</a>
 
@@ -53,11 +49,19 @@
 					<nav class="header-menu">
 						<ul>
 						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
 						</ul>
 					</nav>
 					<nav class="header-nav">
 						<div class="social">
 							
+								<a class="github" target="_blank" href="https://github.com/Lixucheng" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/3868834235" title="weibo">weibo</a>
+					        
 						</div>
 					</nav>
 				</section>
@@ -83,7 +87,7 @@
 		<header id="header" class="inner">
 			<div class="profilepic">
 			
-				<img src="undefined" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
+				<img src="/lxchead.jpeg" class="js-avatar" style="width: 100%;height: 100%;opacity: 1;">
 			
 			</div>
 			<hgroup>
@@ -93,12 +97,20 @@
 			<nav class="header-menu">
 				<ul>
 				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
 		        <div class="clearfix"></div>
 				</ul>
 			</nav>
 			<nav class="header-nav">
 				<div class="social">
 					
+						<a class="github" target="_blank" href="https://github.com/Lixucheng" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/3868834235" title="weibo">weibo</a>
+			        
 				</div>
 			</nav>
 		</header>				
@@ -108,27 +120,48 @@
       <div class="body-wrap"><article id="post-采用正则表达式获取地址栏参数" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/04/采用正则表达式获取地址栏参数/" class="article-date">
-  	<time datetime="2016-03-04T04:50:27.482Z" itemprop="datePublished">2016-03-04</time>
+      <a href="/2016/03/02/采用正则表达式获取地址栏参数/" class="article-date">
+  	<time datetime="2016-03-02T12:10:33.000Z" itemprop="datePublished">2016-03-02</time>
 </a>
     </div>
   
   <div class="article-inner">
     
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      采用正则表达式获取地址栏参数
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+        
+	<div class="article-category tagcloud">
+	<a class="article-category-link" href="/categories/javascript/">javascript</a>
+	</div>
+
+
+        <div class="clearfix"></div>
+      </div>
+      
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="采用正则表达式获取地址栏参数"><a href="#采用正则表达式获取地址栏参数" class="headerlink" title="采用正则表达式获取地址栏参数"></a>采用正则表达式获取地址栏参数</h1><p>标签（空格分隔）： javascript</p>
-<hr>
-<h3 id="1-采用正则表达式获取地址栏参数："><a href="#1-采用正则表达式获取地址栏参数：" class="headerlink" title="1.采用正则表达式获取地址栏参数："></a>1.采用正则表达式获取地址栏参数：</h3><p>根据url和参数名获取参数值<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GetQueryString</span>(<span class="params">name</span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">     <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"(^|&amp;)"</span>+ name +<span class="string">"=([^&amp;]*)(&amp;|$)"</span>);</span><br><span class="line">     <span class="keyword">var</span> r = <span class="built_in">window</span>.location.search.substr(<span class="number">1</span>).match(reg);</span><br><span class="line">     <span class="keyword">if</span>(r!=<span class="literal">null</span>)<span class="keyword">return</span>  <span class="built_in">unescape</span>(r[<span class="number">2</span>]); <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 调用方法</span></span><br><span class="line">alert(GetQueryString(<span class="string">"参数名1"</span>));</span><br></pre></td></tr></table></figure></p>
+        <h3 id="1-采用正则表达式获取地址栏参数："><a href="#1-采用正则表达式获取地址栏参数：" class="headerlink" title="1.采用正则表达式获取地址栏参数："></a>1.采用正则表达式获取地址栏参数：</h3><p>根据url和参数名获取参数值<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GetQueryString</span>(<span class="params">name</span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">     <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"(^|&amp;)"</span>+ name +<span class="string">"=([^&amp;]*)(&amp;|$)"</span>);</span><br><span class="line">     <span class="keyword">var</span> r = <span class="built_in">window</span>.location.search.substr(<span class="number">1</span>).match(reg);</span><br><span class="line">     <span class="keyword">if</span>(r!=<span class="literal">null</span>)<span class="keyword">return</span>  <span class="built_in">unescape</span>(r[<span class="number">2</span>]); <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 调用方法</span></span><br><span class="line">alert(GetQueryString(<span class="string">"参数名1"</span>));</span><br></pre></td></tr></table></figure></p>
 <h3 id="2-修改url参数值："><a href="#2-修改url参数值：" class="headerlink" title="2.修改url参数值："></a>2.修改url参数值：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeURLPar</span>(<span class="params">destiny, par, par_value</span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> pattern = par+<span class="string">'=([^&amp;]*)'</span>;</span><br><span class="line">    <span class="keyword">var</span> replaceText = par+<span class="string">'='</span>+par_value;</span><br><span class="line">    <span class="keyword">if</span> (destiny.match(pattern))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">var</span> tmp = <span class="string">'/\\'</span>+par+<span class="string">'=[^&amp;]*/'</span>;</span><br><span class="line">        tmp = destiny.replace(<span class="built_in">eval</span>(tmp), replaceText);</span><br><span class="line">        <span class="keyword">return</span> (tmp);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (destiny.match(<span class="string">'[\?]'</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> destiny+<span class="string">'&amp;'</span>+ replaceText;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> destiny+<span class="string">'?'</span>+replaceText;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> destiny+<span class="string">'\n'</span>+par+<span class="string">'\n'</span>+par_value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>destiny是目标字符串</li>
 <li>par是参数名</li>
 <li>par_value是参数要更改的值</li>
 <li>如果url中没有选定的参数值，会自动添加</li>
-<li>缺点是还不能删除参数</li>
-<li></li>
+<li>缺点是还不能删除参数<br>*</li>
 </ul>
 
       
@@ -139,20 +172,15 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/03/04/超文本编辑器simditor简单应用/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/03/02/超文本编辑器simditor简单应用/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          (no title)
+          超文本编辑器simditor简单应用
         
       </div>
     </a>
   
-  
-    <a href="/2016/03/04/OpenXml 操作Word Excel/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title"></div>
-      <strong class="article-nav-caption">></strong>
-    </a>
   
 </nav>
 
@@ -162,6 +190,26 @@
 
 
 
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="采用正则表达式获取地址栏参数" data-title="采用正则表达式获取地址栏参数" data-url="http://yoursite.com/2016/03/02/采用正则表达式获取地址栏参数/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
 
 
 
@@ -181,10 +229,12 @@
 </footer>
     </div>
     
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
 
 <script>
 	var yiliaConfig = {
-		fancybox: undefined,
+		fancybox: true,
 		mathjax: undefined,
 		animate: undefined,
 		isHome: false,

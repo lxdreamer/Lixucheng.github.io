@@ -61,7 +61,7 @@
 						</div>
 						
 					</div>
-					
+
 				</div>
 				<div class="tips-box hide">
 					<div class="tips-arrow"></div>
@@ -101,15 +101,15 @@
 						</div>
 					</nav>
 				</section>
-				
+
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/C/" style="font-size: 15px;">C#</a> <a href="/tags/git/" style="font-size: 10px;">git</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a>
+						<a href="/tags/C/" style="font-size: 16.67px;">C#</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a>
 					</div>
 				</section>
 				
-				
+
 				
 
 				
@@ -121,7 +121,7 @@
 				
 			</div>
 		</div>
-	</header>				
+	</header>
 </div>
 
     </div>
@@ -170,6 +170,91 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-初次上传工程到github的方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/06/初次上传工程到github的方法/" class="article-date">
+  	<time datetime="2016-03-06T08:22:38.994Z" itemprop="datePublished">2016-03-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/06/初次上传工程到github的方法/">初次上传工程到github的方法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-建立仓库"><a href="#1-建立仓库" class="headerlink" title="1. 建立仓库"></a>1. 建立仓库</h3><p> 这个就不做介绍了，在github新建就行</p>
+<h3 id="2-克隆"><a href="#2-克隆" class="headerlink" title="2. 克隆"></a>2. 克隆</h3><blockquote>
+<p>git clone address.git</p>
+</blockquote>
+<h3 id="3-进入项目文件夹并与云端同步"><a href="#3-进入项目文件夹并与云端同步" class="headerlink" title="3. 进入项目文件夹并与云端同步"></a>3. 进入项目文件夹并与云端同步</h3><blockquote>
+<p>git pull address.git   </p>
+</blockquote>
+<h3 id="4-将自己的工程文件复制进来"><a href="#4-将自己的工程文件复制进来" class="headerlink" title="4. 将自己的工程文件复制进来"></a>4. 将自己的工程文件复制进来</h3><h3 id="5-同步"><a href="#5-同步" class="headerlink" title="5. 同步"></a>5. 同步</h3><blockquote>
+<p>git add .<br>git commit -m ‘first’<br>git push</p>
+</blockquote>
+<h3 id="注意！"><a href="#注意！" class="headerlink" title="注意！"></a>注意！</h3><p>如果在add的时候报错类似：</p>
+<blockquote>
+<p>LF will be replaced by CRLF | fatal: CRLF would be replaced by LF</p>
+</blockquote>
+<p>是因为Git的换行符检查功能;</p>
+<p>假如你正在Windows上写程序，又或者你正在和其他人合作，他们在Windows上编程，而你却在其他系统上，在这些情况下，你可能会遇到行尾结束符问题。这是因为Windows使用回车和换行两个字符来结束一行，而Mac和Linux只使用换行一个字符。虽然这是小问题，但它会极大地扰乱跨平台协作。</p>
+<p>Git可以在你提交时自动地把行结束符CRLF转换成LF，而在签出代码时把LF转换成CRLF。用core.autocrlf来打开此项功能，如果是在Windows系统上，把它设置成true，这样当签出代码时，LF会被转换成CRLF：</p>
+<blockquote>
+<p>$ git config –global core.autocrlf true</p>
+</blockquote>
+<p>Linux或Mac系统使用LF作为行结束符，因此你不想 Git 在签出文件时进行自动的转换；当一个以CRLF为行结束符的文件不小心被引入时你肯定想进行修正，把core.autocrlf设置成input来告诉 Git 在提交时把CRLF转换成LF，签出时不转换：</p>
+<blockquote>
+<p>$ git config –global core.autocrlf input</p>
+</blockquote>
+<p>这样会在Windows系统上的签出文件中保留CRLF，会在Mac和Linux系统上，包括仓库中保留LF。</p>
+<p>如果你是Windows程序员，且正在开发仅运行在Windows上的项目，可以设置false取消此功能，把回车符记录在库中：</p>
+<blockquote>
+<p>$ git config –global core.autocrlf false</p>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-C Sharp特性" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -266,67 +351,6 @@
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-OpenXml 操作Word Excel" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/02/OpenXml 操作Word Excel/" class="article-date">
-  	<time datetime="2016-03-02T12:10:33.000Z" itemprop="datePublished">2016-03-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/02/OpenXml 操作Word Excel/">OpenXml 操作Word Excel</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>下面是两篇参考博客<br>Word ：<a href="http://blog.csdn.net/francislaw/article/details/7568317" target="_blank" rel="external">http://blog.csdn.net/francislaw/article/details/7568317</a><br>Excel ：<a href="http://www.cnblogs.com/BeyondWJsel/archive/2012/05/10/2494418.html" target="_blank" rel="external">http://www.cnblogs.com/BeyondWJsel/archive/2012/05/10/2494418.html</a></p>
-<p>由于项目需要，我只学习了word插入文字部分，剩下的需要再回来看</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">//在word对应的mark位置插入文字</span><br><span class="line">public void bookmark(WordprocessingDocument file, string markname, string str)</span><br><span class="line">    &#123;</span><br><span class="line">        Dictionary&lt;String, BookmarkStart&gt; bookmarkMap =</span><br><span class="line">        new Dictionary&lt;String, BookmarkStart&gt;();</span><br><span class="line"></span><br><span class="line">        foreach (BookmarkStart bookmarkStart in file.MainDocumentPart.RootElement.Descendants&lt;BookmarkStart&gt;())</span><br><span class="line">            &#123;</span><br><span class="line">                if (bookmarkStart.Name == markname)</span><br><span class="line">                &#123;</span><br><span class="line">                    var run = new Run();</span><br><span class="line">                    run.Append(new Text(str));</span><br><span class="line">                    bookmarkStart.InsertAfterSelf(run);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            //foreach (BookmarkStart bookmarkStart in bookmarkMap.Values)</span><br><span class="line">            //&#123;</span><br><span class="line">            //    var run = new Run();</span><br><span class="line">            //    run.Append(new Text(&quot;Hello World&quot;));</span><br><span class="line">            //    bookmarkStart.InsertAfterSelf(run);         </span><br><span class="line">            //&#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">//打开一个word插入文字</span><br><span class="line">public static void AddString(string filePath, string str)</span><br><span class="line">    &#123;</span><br><span class="line">            using (WordprocessingDocument doc = WordprocessingDocument.Open(filePath, true))</span><br><span class="line">            &#123;</span><br><span class="line">                Paragraph paragraph = new Paragraph();</span><br><span class="line">                Run run = new Run();</span><br><span class="line"></span><br><span class="line">                RunProperties runProperties = new RunProperties(); //属性</span><br><span class="line"></span><br><span class="line">                //RunFonts fonts = new RunFonts() &#123; EastAsia = &quot;DFKai-SB&quot; &#125;; // 设置字体</span><br><span class="line">                //FontSize size = new FontSize() &#123; Val = &quot;52&quot; &#125;; // 设置字体大小</span><br><span class="line">                //Color color = new Color() &#123; Val = &quot;red&quot; &#125;; // 设置字体样式</span><br><span class="line"></span><br><span class="line">                // 将样式添加到属性里面</span><br><span class="line">                //runProperties.Append(color);</span><br><span class="line">                //runProperties.Append(size);</span><br><span class="line">                //runProperties.Append(fonts);</span><br><span class="line"></span><br><span class="line">                //run.Append(runProperties);</span><br><span class="line">                run.Append(new Text(str));</span><br><span class="line">                paragraph.Append(run);</span><br><span class="line">                doc.MainDocumentPart.Document.Body.Append(paragraph);</span><br><span class="line">                doc.MainDocumentPart.Document.Save();</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//根据文字新建word</span><br><span class="line">public void Create(string filePath, string str)</span><br><span class="line">    &#123;</span><br><span class="line">    var psth = Server.MapPath(@&quot;~/Word&quot;);</span><br><span class="line">    using (WordprocessingDocument doc = WordprocessingDocument.Create(psth + &quot;\\t.docx&quot;, WordprocessingDocumentType.Document))</span><br><span class="line">        &#123;</span><br><span class="line">            // ②：为doc添加MainDocumentPart部分  </span><br><span class="line">            MainDocumentPart mainPart = doc.AddMainDocumentPart();</span><br><span class="line"></span><br><span class="line">            // ③：为mainPart添加Document，对应于Word里的文档内容部分  </span><br><span class="line">            mainPart.Document = new Document();</span><br><span class="line"></span><br><span class="line">            // ④：为Document添加Body，之后所有于内容相关的均在此body中  </span><br><span class="line">            Body body = mainPart.Document.AppendChild(new Body());</span><br><span class="line"></span><br><span class="line">            // ⑤：添加段落P，P中包含一个文本“TEST”  </span><br><span class="line">            Paragraph p = mainPart.Document.Body.AppendChild(new Paragraph());</span><br><span class="line">            p.AppendChild(new Run(new Text(&quot;TEST&quot;)));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li></ul>
 	</div>
 
       
@@ -466,6 +490,67 @@
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-OpenXml 操作Word Excel" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/02/OpenXml 操作Word Excel/" class="article-date">
+  	<time datetime="2016-03-02T12:10:33.000Z" itemprop="datePublished">2016-03-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/02/OpenXml 操作Word Excel/">OpenXml 操作Word Excel</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>下面是两篇参考博客<br>Word ：<a href="http://blog.csdn.net/francislaw/article/details/7568317" target="_blank" rel="external">http://blog.csdn.net/francislaw/article/details/7568317</a><br>Excel ：<a href="http://www.cnblogs.com/BeyondWJsel/archive/2012/05/10/2494418.html" target="_blank" rel="external">http://www.cnblogs.com/BeyondWJsel/archive/2012/05/10/2494418.html</a></p>
+<p>由于项目需要，我只学习了word插入文字部分，剩下的需要再回来看</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">//在word对应的mark位置插入文字</span><br><span class="line">public void bookmark(WordprocessingDocument file, string markname, string str)</span><br><span class="line">    &#123;</span><br><span class="line">        Dictionary&lt;String, BookmarkStart&gt; bookmarkMap =</span><br><span class="line">        new Dictionary&lt;String, BookmarkStart&gt;();</span><br><span class="line"></span><br><span class="line">        foreach (BookmarkStart bookmarkStart in file.MainDocumentPart.RootElement.Descendants&lt;BookmarkStart&gt;())</span><br><span class="line">            &#123;</span><br><span class="line">                if (bookmarkStart.Name == markname)</span><br><span class="line">                &#123;</span><br><span class="line">                    var run = new Run();</span><br><span class="line">                    run.Append(new Text(str));</span><br><span class="line">                    bookmarkStart.InsertAfterSelf(run);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            //foreach (BookmarkStart bookmarkStart in bookmarkMap.Values)</span><br><span class="line">            //&#123;</span><br><span class="line">            //    var run = new Run();</span><br><span class="line">            //    run.Append(new Text(&quot;Hello World&quot;));</span><br><span class="line">            //    bookmarkStart.InsertAfterSelf(run);         </span><br><span class="line">            //&#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">//打开一个word插入文字</span><br><span class="line">public static void AddString(string filePath, string str)</span><br><span class="line">    &#123;</span><br><span class="line">            using (WordprocessingDocument doc = WordprocessingDocument.Open(filePath, true))</span><br><span class="line">            &#123;</span><br><span class="line">                Paragraph paragraph = new Paragraph();</span><br><span class="line">                Run run = new Run();</span><br><span class="line"></span><br><span class="line">                RunProperties runProperties = new RunProperties(); //属性</span><br><span class="line"></span><br><span class="line">                //RunFonts fonts = new RunFonts() &#123; EastAsia = &quot;DFKai-SB&quot; &#125;; // 设置字体</span><br><span class="line">                //FontSize size = new FontSize() &#123; Val = &quot;52&quot; &#125;; // 设置字体大小</span><br><span class="line">                //Color color = new Color() &#123; Val = &quot;red&quot; &#125;; // 设置字体样式</span><br><span class="line"></span><br><span class="line">                // 将样式添加到属性里面</span><br><span class="line">                //runProperties.Append(color);</span><br><span class="line">                //runProperties.Append(size);</span><br><span class="line">                //runProperties.Append(fonts);</span><br><span class="line"></span><br><span class="line">                //run.Append(runProperties);</span><br><span class="line">                run.Append(new Text(str));</span><br><span class="line">                paragraph.Append(run);</span><br><span class="line">                doc.MainDocumentPart.Document.Body.Append(paragraph);</span><br><span class="line">                doc.MainDocumentPart.Document.Save();</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//根据文字新建word</span><br><span class="line">public void Create(string filePath, string str)</span><br><span class="line">    &#123;</span><br><span class="line">    var psth = Server.MapPath(@&quot;~/Word&quot;);</span><br><span class="line">    using (WordprocessingDocument doc = WordprocessingDocument.Create(psth + &quot;\\t.docx&quot;, WordprocessingDocumentType.Document))</span><br><span class="line">        &#123;</span><br><span class="line">            // ②：为doc添加MainDocumentPart部分  </span><br><span class="line">            MainDocumentPart mainPart = doc.AddMainDocumentPart();</span><br><span class="line"></span><br><span class="line">            // ③：为mainPart添加Document，对应于Word里的文档内容部分  </span><br><span class="line">            mainPart.Document = new Document();</span><br><span class="line"></span><br><span class="line">            // ④：为Document添加Body，之后所有于内容相关的均在此body中  </span><br><span class="line">            Body body = mainPart.Document.AppendChild(new Body());</span><br><span class="line"></span><br><span class="line">            // ⑤：添加段落P，P中包含一个文本“TEST”  </span><br><span class="line">            Paragraph p = mainPart.Document.Body.AppendChild(new Paragraph());</span><br><span class="line">            p.AppendChild(new Run(new Text(&quot;TEST&quot;)));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li></ul>
 	</div>
 
       
@@ -768,11 +853,13 @@
     		&copy; 2016 李续铖
     	</div>
       	<div class="footer-right">
-      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      		<!-- <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia
+          </a> by Litten -->
       	</div>
     </div>
   </div>
 </footer>
+
     </div>
     
   <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
@@ -811,8 +898,8 @@ MathJax.Hub.Config({
 MathJax.Hub.Queue(function() {
     var all = MathJax.Hub.getAllJax(), i;
     for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
 });
 </script>
 

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+  <title>李续铖的博客</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="title:Javascript 数组操作
+date:2016-3-11
+tags:javascript
+
+1.新建数组1234567//可以省略newvar colors = new Array();var colors = new Array(20);var colors = new Array(&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;);var colors = [&quot;red&quot;, &quot;bl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="李续铖的博客">
+<meta property="og:url" content="http://yoursite.com/2016/03/11/javascript 数组操作/index.html">
+<meta property="og:site_name" content="李续铖的博客">
+<meta property="og:description" content="title:Javascript 数组操作
+date:2016-3-11
+tags:javascript
+
+1.新建数组1234567//可以省略newvar colors = new Array();var colors = new Array(20);var colors = new Array(&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;);var colors = [&quot;red&quot;, &quot;bl">
+<meta property="og:updated_time" content="2016-03-11T05:49:14.573Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="李续铖的博客">
+<meta name="twitter:description" content="title:Javascript 数组操作
+date:2016-3-11
+tags:javascript
+
+1.新建数组1234567//可以省略newvar colors = new Array();var colors = new Array(20);var colors = new Array(&quot;red&quot;, &quot;blue&quot;, &quot;green&quot;);var colors = [&quot;red&quot;, &quot;bl">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/lxchead.jpeg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">李续铖</a></h1>
+		</hgroup>
+
+		
+		<p class="header-subtitle">真的勇士，敢于直面惨淡的warning、敢于正视淋漓的error。</p>
+		
+
+		
+			<div class="switch-btn">
+				<div class="icon">
+					<div class="icon-ctn">
+						<div class="icon-wrap icon-house" data-idx="0">
+							<div class="birdhouse"></div>
+							<div class="birdhouse_holes"></div>
+						</div>
+						<div class="icon-wrap icon-ribbon hide" data-idx="1">
+							<div class="ribbon"></div>
+						</div>
+						
+						
+						<div class="icon-wrap icon-me hide" data-idx="3">
+							<div class="user"></div>
+							<div class="shoulder"></div>
+						</div>
+						
+					</div>
+
+				</div>
+				<div class="tips-box hide">
+					<div class="tips-arrow"></div>
+					<ul class="tips-inner">
+						<li>菜单</li>
+						<li>标签</li>
+						
+						
+						<li>关于我</li>
+						
+					</ul>
+				</div>
+			</div>
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/Lixucheng" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/u/3868834235" title="weibo">weibo</a>
+					        
+								<a class="oschina" target="_blank" href="http://git.oschina.net/lixucheng" title="oschina">oschina</a>
+					        
+						</div>
+					</nav>
+				</section>
+
+				
+				<section class="switch-part switch-part2">
+					<div class="widget tagcloud" id="js-tagcloud">
+						<a href="/tags/C/" style="font-size: 16.67px;">C#</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a>
+					</div>
+				</section>
+				
+
+				
+
+				
+				
+				<section class="switch-part switch-part3">
+				
+					<div id="js-aboutme">大连理工大学 13级 前端码农</div>
+				</section>
+				
+			</div>
+		</div>
+	</header>
+</div>
+
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">李续铖</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+			
+				<img lazy-src="/lxchead.jpeg" class="js-avatar">
+			
+			</div>
+			<hgroup>
+			  <h1 class="header-author">李续铖</h1>
+			</hgroup>
+			
+			<p class="header-subtitle">真的勇士，敢于直面惨淡的warning、敢于正视淋漓的error。</p>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/Lixucheng" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/u/3868834235" title="weibo">weibo</a>
+			        
+						<a class="oschina" target="_blank" href="http://git.oschina.net/lixucheng" title="oschina">oschina</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+
+      <div class="body-wrap"><article id="post-javascript 数组操作" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/11/javascript 数组操作/" class="article-date">
+  	<time datetime="2016-03-11T05:47:05.091Z" itemprop="datePublished">2016-03-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<p>title:Javascript 数组操作</p>
+<p>date:2016-3-11</p>
+<p>tags:javascript</p>
+<hr>
+<h3 id="1-新建数组"><a href="#1-新建数组" class="headerlink" title="1.新建数组"></a>1.新建数组</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//可以省略new</span></span><br><span class="line"><span class="keyword">var</span> colors = <span class="keyword">new</span> <span class="built_in">Array</span>();</span><br><span class="line"><span class="keyword">var</span> colors = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">20</span>);</span><br><span class="line"><span class="keyword">var</span> colors = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="string">"red"</span>, <span class="string">"blue"</span>, <span class="string">"green"</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> colors = [<span class="string">"red"</span>, <span class="string">"blue"</span>, <span class="string">"green"</span>]; <span class="comment">// 创建一个包含 3 个字符串的数组</span></span><br><span class="line"><span class="keyword">var</span> names = []; <span class="comment">// 创建一个空数组</span></span><br></pre></td></tr></table></figure>
+<h3 id="2-检测数组"><a href="#2-检测数组" class="headerlink" title="2.检测数组"></a>2.检测数组</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (value <span class="keyword">instanceof</span> <span class="built_in">Array</span>)&#123;</span><br><span class="line"><span class="comment">//对数组执行某些操作</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//推荐下面这种方式</span></span><br><span class="line"><span class="keyword">if</span> (<span class="built_in">Array</span>.isArray(value))&#123;</span><br><span class="line"><span class="comment">//对数组执行某些操作</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="3-栈方法和队列方法"><a href="#3-栈方法和队列方法" class="headerlink" title="3.栈方法和队列方法"></a>3.栈方法和队列方法</h3><blockquote>
+<p>push() 方法可以接收任意数量的参数，把它们逐个添加到数组末尾，并返回修改后数组的长度<br>pop() 方法则从数组末尾移除最后一项，减少数组的 length 值，然后返回移除的项<br>shift() 它能够移除数组中的第一个项并返回该项，同时将数组长度减 1<br>unshift()它能在数组前端添加任意个项并返回新数组的长度<br>例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var colors = new Array(); // 创建一个数组</span><br><span class="line">var count = colors.push(&quot;red&quot;, &quot;green&quot;); // 推入两项</span><br><span class="line">alert(count); //2</span><br><span class="line">count = colors.push(&quot;black&quot;); // 推入另一项</span><br><span class="line">alert(count); //3</span><br><span class="line">var item = colors.pop(); // 取得最后一项</span><br><span class="line">alert(item); //&quot;black&quot;</span><br><span class="line">alert(colors.length); //2</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="4-转换方法"><a href="#4-转换方法" class="headerlink" title="4.转换方法"></a>4.转换方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> colors = [<span class="string">"red"</span>, <span class="string">"blue"</span>, <span class="string">"green"</span>]; <span class="comment">// 创建一个包含 3 个字符串的数组</span></span><br><span class="line">alert(colors.toString()); <span class="comment">// red,blue,green</span></span><br><span class="line">alert(colors.valueOf()); <span class="comment">// red,blue,green</span></span><br><span class="line">alert(colors); <span class="comment">// red,blue,green</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>alert() 会自动调用toString()方法</p>
+</blockquote>
+<p>例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> person1 = &#123;</span><br><span class="line">toLocaleString : <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="string">"Nikolaos"</span>;</span><br><span class="line">&#125;,</span><br><span class="line">toString : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="string">"Nicholas"</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> person2 = &#123;</span><br><span class="line">toLocaleString : <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="string">"Grigorios"</span>;</span><br><span class="line">&#125;,</span><br><span class="line">toString : <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="string">"Greg"</span>;</span><br><span class="line">&#125;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">var</span> people = [person1, person2];</span><br><span class="line">alert(people); <span class="comment">//Nicholas,Greg</span></span><br><span class="line">alert(people.toString()); <span class="comment">//Nicholas,Greg</span></span><br><span class="line">alert(people.toLocaleString()); <span class="comment">//Nikolaos,Grigorios</span></span><br></pre></td></tr></table></figure></p>
+<h4 id="join-方法-可以使用不同的分隔符来构建这个字符串"><a href="#join-方法-可以使用不同的分隔符来构建这个字符串" class="headerlink" title="join()方法 可以使用不同的分隔符来构建这个字符串"></a>join()方法 可以使用不同的分隔符来构建这个字符串</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> colors = [<span class="string">"red"</span>, <span class="string">"green"</span>, <span class="string">"blue"</span>];</span><br><span class="line">alert(colors.join(<span class="string">","</span>)); <span class="comment">//red,green,blue</span></span><br><span class="line">alert(colors.join(<span class="string">"||"</span>)); <span class="comment">//red||green||blue</span></span><br></pre></td></tr></table></figure>
+<h3 id="5-排序方法"><a href="#5-排序方法" class="headerlink" title="5.排序方法"></a>5.排序方法</h3><blockquote>
+<p>reverse() 方法会反转数组项的顺序<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ar values = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">5</span>];</span><br><span class="line">values.reverse();</span><br><span class="line">alert(values); <span class="comment">//5,4,3,2,1</span></span><br></pre></td></tr></table></figure></p>
+<p>sort() 方法按升序排列数组项——即最小的值位于最前面，最大的值排在最后面。<br>         为了实现排序， sort() 方法会调用每个数组项的 toString()                  转型方法，然后比较得到的字符串，以确定如何排序。<br>         <b>即使数组中的每一项都是数值， sort() 方法比较的也是字符串</b><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> values = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>];</span><br><span class="line">values.sort();</span><br><span class="line">alert(values); <span class="comment">//0,1,10,15,5</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>sort()自定义排序：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compare</span>(<span class="params">value1, value2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (value1 &lt; value2) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (value1 &gt; value2) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> values = [<span class="number">0</span>, <span class="number">1</span>, <span class="number">5</span>, <span class="number">10</span>, <span class="number">15</span>];</span><br><span class="line">values.sort(compare);</span><br><span class="line">alert(values); <span class="comment">//0,1,5,10,15</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//数值型比较函数</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">compare</span>(<span class="params">value1, value2</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> value2 - value1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="6-操作方法"><a href="#6-操作方法" class="headerlink" title="6.操作方法"></a>6.操作方法</h3><blockquote>
+<p> concat() 方法可以基于当前数组中的所有项创建一个新数组<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> colors = [<span class="string">"red"</span>, <span class="string">"green"</span>, <span class="string">"blue"</span>];</span><br><span class="line"><span class="keyword">var</span> colors2 = colors.concat(<span class="string">"yellow"</span>, [<span class="string">"black"</span>, <span class="string">"brown"</span>]);</span><br><span class="line">alert(colors); <span class="comment">//red,green,blue</span></span><br><span class="line">alert(colors2); <span class="comment">//red,green,blue,yellow,black,brown</span></span><br></pre></td></tr></table></figure></p>
+<p> slice() 它能够基于当前数组中的一或多个项创建一个新数组。<br>slice() 方法可以接受一或两个参数，即要返回项的起始和结束位置<br>在只有一个参数的情况下， slice() 方法返回从该<br>参数指定位置开始到当前数组末尾的所有项。如果有两个参数，该方法返回起始和结束位置之间的项—但不包括结束位置的项<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> colors = [<span class="string">"red"</span>, <span class="string">"green"</span>, <span class="string">"blue"</span>, <span class="string">"yellow"</span>, <span class="string">"purple"</span>];</span><br><span class="line"><span class="keyword">var</span> colors2 = colors.slice(<span class="number">1</span>);</span><br><span class="line"><span class="keyword">var</span> colors3 = colors.slice(<span class="number">1</span>,<span class="number">4</span>);</span><br><span class="line">alert(colors2); <span class="comment">//green,blue,yellow,purple</span></span><br><span class="line">alert(colors3); <span class="comment">//green,blue,yellow</span></span><br></pre></td></tr></table></figure></p>
+<p><b>splice() 方法，这个方法恐怕要算是最强大的数组方法了，它有很多种用。<br>splice() 的主要用途是向数组的中部插入项，但使用这种方法的方式则有如下 3 种</b><br><b>删除</b>：可以删除任意数量的项，只需指定 2 个参数：要删除的第一项的位置和要删除的项数。<br>例如， splice(0,2) 会删除数组中的前两项。<br><b>插入</b>：可以向指定位置插入任意数量的项，只需提供 3 个参数：起始位置、0（要删除的项数）<br>和要插入的项。如果要插入多个项，可以再传入第四、第五，以至任意多个项。例如，<br>splice(2,0,”red”,”green”) 会从当前数组的位置 2 开始插入字符串 “red” 和 “green” 。<br><b>替换</b>：可以向指定位置插入任意数量的项，且同时删除任意数量的项，只需指定 3 个参数：起始位置、要删除的项数和要插入的任意数量的项。插入的项数不必与删除的项数相等。例如，<br>splice (2,1,”red”,”green”) 会删除当前数组位置 2 的项，然后再从位置 2 开始插入字符串”red” 和 “green” 。<br>splice() 方法始终都会返回一个数组，该数组中包含从原始数组中删除的项（如果没有删除任何项，则返回一个空数组） 。下面的代码展示了上述 3 种使用 splice() 方法的方式<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> colors = [<span class="string">"red"</span>, <span class="string">"green"</span>, <span class="string">"blue"</span>];</span><br><span class="line"><span class="keyword">var</span> removed = colors.splice(<span class="number">0</span>,<span class="number">1</span>); <span class="comment">// 删除第一项</span></span><br><span class="line">alert(colors); <span class="comment">// green,blue</span></span><br><span class="line">alert(removed); <span class="comment">// red，返回的数组中只包含一项</span></span><br><span class="line">removed = colors.splice(<span class="number">1</span>, <span class="number">0</span>, <span class="string">"yellow"</span>, <span class="string">"orange"</span>); <span class="comment">// 从位置 1 开始插入两项</span></span><br><span class="line">alert(colors); <span class="comment">// green,yellow,orange,blue</span></span><br><span class="line">alert(removed); <span class="comment">// 返回的是一个空数组</span></span><br><span class="line">removed = colors.splice(<span class="number">1</span>, <span class="number">1</span>, <span class="string">"red"</span>, <span class="string">"purple"</span>); <span class="comment">// 插入两项，删除一项</span></span><br><span class="line">alert(colors); <span class="comment">// green,red,purple,orange,blue</span></span><br><span class="line">alert(removed); <span class="comment">// yellow，返回的数组中只包含一项</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="7-位置方法"><a href="#7-位置方法" class="headerlink" title="7.位置方法"></a>7.位置方法</h3><blockquote>
+<p> indexOf() 和 lastIndexOf() 。这两个方法都接收两个参数：要查找的项和（可选的）表示查找起点位置的索引。其中，indexOf() 方法从数组的开头（位置0）开始向后查找，lastIndexOf() 方法则从数组的末尾开始向前查找<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>];</span><br><span class="line">alert(numbers.indexOf(<span class="number">4</span>)); <span class="comment">//3</span></span><br><span class="line">alert(numbers.lastIndexOf(<span class="number">4</span>)); <span class="comment">//5</span></span><br><span class="line">alert(numbers.indexOf(<span class="number">4</span>, <span class="number">4</span>)); <span class="comment">//5</span></span><br><span class="line">alert(numbers.lastIndexOf(<span class="number">4</span>, <span class="number">4</span>)); <span class="comment">//3</span></span><br><span class="line"><span class="keyword">var</span> person = &#123; name: <span class="string">"Nicholas"</span> &#125;;</span><br><span class="line"><span class="keyword">var</span> people = [&#123; name: <span class="string">"Nicholas"</span> &#125;];</span><br><span class="line"><span class="keyword">var</span> morePeople = [person];</span><br><span class="line">alert(people.indexOf(person)); <span class="comment">//-1</span></span><br><span class="line">alert(morePeople.indexOf(person)); <span class="comment">//0</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="8-迭代方法"><a href="#8-迭代方法" class="headerlink" title="8.迭代方法"></a>8.迭代方法</h3><blockquote>
+<p>every() ：对数组中的每一项运行给定函数，如果该函数对每一项都返回           true，则返回 true 。</p>
+<p>filter() ：对数组中的每一项运行给定函数，返回该函数会返回 true 的项组成的数组。</p>
+<p>forEach() ：对数组中的每一项运行给定函数。这个方法没有返回值。</p>
+<p>map() ：对数组中的每一项运行给定函数，返回每次函数调用的结果组成的数组</p>
+<p>some() ：对数组中的每一项运行给定函数，如果该函数对任一项返回 true ，则返回 true 。</p>
+</blockquote>
+<p> every() 和 some() ，它们都用于查询数组中的项是否满足某个条件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>];</span><br><span class="line"><span class="keyword">var</span> everyResult = numbers.every(<span class="function"><span class="keyword">function</span>(<span class="params">item, index, array</span>)</span>&#123;</span><br><span class="line"><span class="keyword">return</span> (item &gt; <span class="number">2</span>);</span><br><span class="line">&#125;);</span><br><span class="line">alert(everyResult); <span class="comment">//false</span></span><br><span class="line"><span class="keyword">var</span> someResult = numbers.some(<span class="function"><span class="keyword">function</span>(<span class="params">item, index, array</span>)</span>&#123;</span><br><span class="line"><span class="keyword">return</span> (item &gt; <span class="number">2</span>);</span><br><span class="line">&#125;);</span><br><span class="line">alert(someResult); <span class="comment">//true</span></span><br></pre></td></tr></table></figure></p>
+<p>filter() 它利用指定的函数确定是否在返回的数组中包含某一项</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>];</span><br><span class="line"><span class="keyword">var</span> filterResult = numbers.filter(<span class="function"><span class="keyword">function</span>(<span class="params">item, index, array</span>)</span>&#123;</span><br><span class="line"><span class="keyword">return</span> (item &gt; <span class="number">2</span>);</span><br><span class="line">&#125;);</span><br><span class="line">alert(filterResult); <span class="comment">//[3,4,5,4,3]</span></span><br></pre></td></tr></table></figure>
+<p>map() 也返回一个数组，而这个数组的每一项都是在原始数组中的对应项上运行传入函数的结果<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>];</span><br><span class="line"><span class="keyword">var</span> mapResult = numbers.map(<span class="function"><span class="keyword">function</span>(<span class="params">item, index, array</span>)</span>&#123;</span><br><span class="line"><span class="keyword">return</span> item * <span class="number">2</span>;</span><br><span class="line">&#125;);</span><br><span class="line">alert(mapResult); <span class="comment">//[2,4,6,8,10,8,6,4,2]</span></span><br></pre></td></tr></table></figure></p>
+<p> forEach() ，它只是对数组中的每一项运行传入的函数。这个方法没有返回值，<br>本质上与使用 for 循环迭代数组一样<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numbers = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>];</span><br><span class="line">numbers.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item, index, array</span>)</span>&#123;</span><br><span class="line"><span class="comment">//执行某些操作</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="9-归并方法"><a href="#9-归并方法" class="headerlink" title="9.归并方法"></a>9.归并方法</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//使用 reduce() 方法可以执行求数组中所有值之和的操作，比如：</span></span><br><span class="line"><span class="keyword">var</span> values = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> sum = values.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">prev, cur, index, array</span>)</span>&#123;</span><br><span class="line"><span class="keyword">return</span> prev + cur;</span><br><span class="line">&#125;);</span><br><span class="line">alert(sum); <span class="comment">//15</span></span><br><span class="line"><span class="comment">//reduceRight() 的作用类似，只不过方向相反而已。来看下面这个例子。</span></span><br><span class="line"><span class="keyword">var</span> values = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>];</span><br><span class="line"><span class="keyword">var</span> sum = values.reduceRight(<span class="function"><span class="keyword">function</span>(<span class="params">prev, cur, index, array</span>)</span>&#123;</span><br><span class="line"><span class="keyword">return</span> prev + cur;</span><br><span class="line">&#125;);</span><br><span class="line">alert(sum); <span class="comment">//15</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2016/03/06/初次上传工程到github的方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">初次上传工程到github的方法</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share_jia">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到: &nbsp; </span>
+		<a class="jiathis_button_facebook"></a> 
+    <a class="jiathis_button_twitter"></a>
+    <a class="jiathis_button_plus"></a> 
+    <a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+    <a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="javascript 数组操作" data-title="" data-url="http://yoursite.com/2016/03/11/javascript 数组操作/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"true"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2016 李续铖
+    	</div>
+      	<div class="footer-right">
+      		<!-- <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia
+          </a> by Litten -->
+      	</div>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

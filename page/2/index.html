@@ -171,10 +171,10 @@
 
       <div class="body-wrap">
   
-    <article id="post-linux下mysql的安装与简单操作" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-jQuery ajax 简单使用" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/02/linux下mysql的安装与简单操作/" class="article-date">
+      <a href="/2016/03/02/jQuery ajax 简单使用/" class="article-date">
   	<time datetime="2016-03-02T12:10:33.000Z" itemprop="datePublished">2016-03-02</time>
 </a>
     </div>
@@ -188,7 +188,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/02/linux下mysql的安装与简单操作/">linux下mysql的安装与简单操作</a>
+      <a class="article-title" href="/2016/03/02/jQuery ajax 简单使用/">jQuery ajax 简单使用</a>
     </h1>
   
 
@@ -197,27 +197,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-安装命令如下"><a href="#1-安装命令如下" class="headerlink" title="1.安装命令如下"></a>1.安装命令如下</h3><blockquote>
-<p>sudo apt-get install mysql-server<br>然后按照提示输入数据库密码即可</p>
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">   type: <span class="string">'get'</span>,</span><br><span class="line">   url: <span class="string">"change"</span> ,</span><br><span class="line">   data: &#123;</span><br><span class="line">       name：<span class="string">"lxc"</span></span><br><span class="line">   &#125; ,</span><br><span class="line">   success: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       alert(<span class="string">"提交成功"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>我在开发中就像上面这样用，下面简单介绍一下参数：</p>
+<blockquote>
+<ol>
+<li>type<br>get:以get的形式向目的url发送get请求类似如下<br><a href="http://localhost:8765/user/index/change?name=lxc&amp;num=12&amp;id=1" target="_blank" rel="external">http://localhost:8765/user/index/change?name=lxc&amp;num=12&amp;id=1</a><br>post:其数据作为HTTP消息的实体形式发送请求,一般用于数据较多的时候</li>
+<li>url<br>必须，就是请求的接受地址，默认是当前界面的地址</li>
+<li>data<br>请求中发送的数据</li>
+<li>success<br>请求成功后置信地个回调函数</li>
+<li>dataType<br>可选，规定预期的服务器响应的数据类型。<br>默认执行智能判断（xml、json、script 或 html）。</li>
+</ol>
 </blockquote>
-<h3 id="2-启动mysql命令"><a href="#2-启动mysql命令" class="headerlink" title="2.启动mysql命令"></a>2.启动mysql命令</h3><blockquote>
-<p>service mysql start<br>这时系统会提示输入密码，正确输入后没有报错就是启动成功了</p>
-</blockquote>
-<h3 id="3-关闭mysql服务"><a href="#3-关闭mysql服务" class="headerlink" title="3.关闭mysql服务"></a>3.关闭mysql服务</h3><blockquote>
-<p>service mysql stop</p>
-</blockquote>
-<h3 id="4-连接数据库"><a href="#4-连接数据库" class="headerlink" title="4.连接数据库"></a>4.连接数据库</h3><blockquote>
-<p>mysql -u root -p<br>这时系统会提示输入密码，正确输入后会进去mysql命令行下</p>
-</blockquote>
-<h3 id="5-查看数据库"><a href="#5-查看数据库" class="headerlink" title="5.查看数据库"></a>5.查看数据库</h3><blockquote>
-<p>show databases;<br>需要注意的是mysql命令后面一定要加分号，否则不会运行</p>
-</blockquote>
-<h3 id="6-创建数据库"><a href="#6-创建数据库" class="headerlink" title="6.创建数据库"></a>6.创建数据库</h3><blockquote>
-<p>create database name;</p>
-</blockquote>
-<h3 id="7-创建表"><a href="#7-创建表" class="headerlink" title="7.创建表"></a>7.创建表</h3><blockquote>
-<p>create table user(id int(3) auto_increment not null primary key, name char(8));</p>
-</blockquote>
+<p>还有一些比较灵活的用法<br>比如get请求时将数据集成在url里面<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">   type: <span class="string">'get'</span>,</span><br><span class="line">   url: <span class="string">"change?name=lxc&amp;num=12&amp;id=1"</span>,</span><br><span class="line">   success: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       alert(<span class="string">"提交成功"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -226,7 +217,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 	</div>
 
       

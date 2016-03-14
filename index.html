@@ -105,7 +105,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/C/" style="font-size: 16.67px;">C#</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/兼容/" style="font-size: 10px;">兼容</a>
+						<a href="/tags/C/" style="font-size: 16.67px;">C#</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a>
 					</div>
 				</section>
 				
@@ -175,7 +175,7 @@
   
     <div class="article-meta">
       <a href="/2016/03/14/常见浏览器兼容性问题与解决方案/" class="article-date">
-  	<time datetime="2016-03-14T02:54:34.216Z" itemprop="datePublished">2016-03-14</time>
+  	<time datetime="2016-03-14T03:00:38.530Z" itemprop="datePublished">2016-03-14</time>
 </a>
     </div>
   
@@ -184,36 +184,44 @@
       <input type="hidden" class="isFancy" />
     
     
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/14/常见浏览器兼容性问题与解决方案/">常见浏览器兼容性问题与解决方案</a>
-    </h1>
-  
-
-      </header>
-      
-    
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###浏览器兼容问题一：不同浏览器的标签默认的外补丁和内补丁不同</p>
+        <h1 id="常见浏览器兼容性问题与解决方案"><a href="#常见浏览器兼容性问题与解决方案" class="headerlink" title="常见浏览器兼容性问题与解决方案"></a>常见浏览器兼容性问题与解决方案</h1><p>标签（空格分隔）： 兼容</p>
+<hr>
+<p>###浏览器兼容问题一：不同浏览器的标签默认的外补丁和内补丁不同</p>
 <blockquote>
 <p>问题症状：随便写几个标签，不加样式控制的情况下，各自的margin 和padding差异较大。<br>碰到频率:100%<br><b>解决方案：CSS里    </b></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;*&#123;margin:<span class="number">0</span>;padding:<span class="number">0</span>;&#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*&#123;margin:<span class="number">0</span>;padding:<span class="number">0</span>;&#125;</span><br></pre></td></tr></table></figure>
 </blockquote>
 <p></p>
 <blockquote>
 <p>备注：这个是最常见的也是最易解决的一个浏览器兼容性问题，几乎所有的CSS文件开头都会用通配符*来设置各个标签的内外补丁是0。</p>
 <p>###浏览器兼容问题二：块属性标签float后，又有横行的margin情况下，在IE6显示margin比设置的大</p>
 <p>问题症状：随便写几个标签，不加样式控制的情况下，各自的margin 和padding差异较大。<br>问题症状：常见症状是IE6中后面的一块被顶到下一行    碰到频率：90%（稍微复杂点的页面都会碰到，float布局最常见的浏览器兼容问题）<br><b>解决方案：在float的标签样式控制中加入display:inline;将其转化为行内属性</b><br>  备注：我们最常用的就是div+CSS布局了，而div就是一个典型的块属性标签，横向布局的时候我们通常都是用div float实现的，横向的间距设置如果用margin实现，这就是一个必然会碰到的兼容性问题。</p>
-<p>###浏览器兼容问题三：设置较小高度标签（一般小于10px），在IE6，IE7，遨游中高度超出自己设置高度<br>问题症状：IE6、7和遨游里这个标签的高度不受控制，超出自己设置的高度<br>碰到频率：60%<br><b>解决方案：给超出高度的标签设置overflow:hidden;或者设置行高line-height 小于你设置的高度。</b><br>备注：这种情况一般出现在我们设置小圆角背景的标签里。出现这个问题的原因是IE8之前的浏览器都会给标签一个最小默认的行高的高度。即使你的标签是空的，这个标签的高度还是会达到默认的行高。</p>
-<p>###浏览器兼容问题四：行内属性标签，设置display:block后采用float布局，又有横行的margin的情况，IE6间距bug<br>问题症状：IE6里的间距比超过设置的间距<br>碰到几率：20%<br><b>解决方案：在display:block;后面加入display:inline;display:table;</b><br>备注：行内属性标签，为了设置宽高，我们需要设置display:block;(除了input标签比较特殊)。在用float布局并有横向的margin后，在IE6下，他就具有了块属性float后的横向margin的bug。不过因为它本身就是行内属性标签，所以我们再加上display:inline的话，它的高宽就不可设了。这时候我们还需要在display:inline后面加入display:talbe。</p>
-<p>###浏览器兼容问题五：图片默认有间距<br>问题症状：几个img标签放在一起的时候，有些浏览器会有默认的间距，加了问题一中提到的通配符也不起作用。<br>碰到几率：20%<br><b>解决方案：使用float属性为img布局</b><br>备注：因为img标签是行内属性标签，所以只要不超出容器宽度，img标签都会排在一行里，但是部分浏览器的img标签之间会有个间距。去掉这个间距使用float是正道。（负margin，虽然能解决，但负margin本身就是容易引起浏览器兼容问题的用法，所以我禁止他们使用）</p>
-<p>###浏览器兼容问题六：标签最低高度设置min-height不兼容<br>问题症状：因为min-height本身就是一个不兼容的CSS属性，所以设置min-height时不能很好的被各个浏览器兼容<br>碰到几率：5%<br><b>解决方案：如果我们要设置一个标签的最小高度200px，需要进行的设置为:</b></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;   &#123;   </span><br><span class="line">&gt;    min-height:<span class="number">200</span>px;</span><br><span class="line">&gt;    height:auto !important;</span><br><span class="line">&gt;    height:<span class="number">200</span>px;</span><br><span class="line">&gt;    overflow:visible;</span><br><span class="line">&gt;    &#125;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>###浏览器兼容问题三：设置较小高度标签（一般小于10px），在IE6，IE7，遨游中高度超出自己设置高度</p>
+<blockquote>
+<p>问题症状：IE6、7和遨游里这个标签的高度不受控制，超出自己设置的高度<br>碰到频率：60%<br><b>解决方案：给超出高度的标签设置overflow:hidden;或者设置行高line-height 小于你设置的高度。</b><br>备注：这种情况一般出现在我们设置小圆角背景的标签里。出现这个问题的原因是IE8之前的浏览器都会给标签一个最小默认的行高的高度。即使你的标签是空的，这个标签的高度还是会达到默认的行高。</p>
+</blockquote>
+<p>###浏览器兼容问题四：行内属性标签，设置display:block后采用float布局，又有横行的margin的情况，IE6间距bug</p>
+<blockquote>
+<p>问题症状：IE6里的间距比超过设置的间距<br>碰到几率：20%<br><b>解决方案：在display:block;后面加入display:inline;display:table;</b><br>备注：行内属性标签，为了设置宽高，我们需要设置display:block;(除了input标签比较特殊)。在用float布局并有横向的margin后，在IE6下，他就具有了块属性float后的横向margin的bug。不过因为它本身就是行内属性标签，所以我们再加上display:inline的话，它的高宽就不可设了。这时候我们还需要在display:inline后面加入display:talbe。</p>
+</blockquote>
+<p>###浏览器兼容问题五：图片默认有间距</p>
+<blockquote>
+<p>问题症状：几个img标签放在一起的时候，有些浏览器会有默认的间距，加了问题一中提到的通配符也不起作用。<br>碰到几率：20%<br><b>解决方案：使用float属性为img布局</b><br>备注：因为img标签是行内属性标签，所以只要不超出容器宽度，img标签都会排在一行里，但是部分浏览器的img标签之间会有个间距。去掉这个间距使用float是正道。（负margin，虽然能解决，但负margin本身就是容易引起浏览器兼容问题的用法，所以我禁止他们使用）</p>
+</blockquote>
+<p>###浏览器兼容问题六：标签最低高度设置min-height不兼容</p>
+<blockquote>
+<p>问题症状：因为min-height本身就是一个不兼容的CSS属性，所以设置min-height时不能很好的被各个浏览器兼容<br>碰到几率：5%<br><b>解决方案：如果我们要设置一个标签的最小高度200px，需要进行的设置为:</b></p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;   </span><br><span class="line"> min-height:<span class="number">200</span>px;</span><br><span class="line"> height:auto !important;</span><br><span class="line"> height:<span class="number">200</span>px; </span><br><span class="line"> overflow:visible;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
 <p>备注：在B/S系统前端开时，有很多情况下我们又这种需求。当内容小于一个值（如300px）时。容器的高度为300px；当内容高度大于这个值时，容器高度被撑高，而不是出现滚动条。这时候我们就会面临这个兼容性问题。</p>
-<p>###浏览器兼容问题七：透明度的兼容CSS设置<br>做兼容页面的方法是：每写一小段代码（布局中的一行或者一块）我们都要在不同的浏览器中看是否兼容，当然熟练到一定的程度就没这么麻烦了。建议经常会碰到兼容性问题的新手使用。很多兼容性问题都是因为浏览器对标签的默认属性解析不同造成的，只要我们稍加设置都能轻松地解决这些兼容问题。如果我们熟悉标签的默认属性的话，就能很好的理解为什么会出现兼容问题以及怎么去解决这些兼容问题。<br>/<em> CSS hack</em>/<br>我很少使用hacker的，可能是个人习惯吧，我不喜欢写的代码IE不兼容，然后用hack来解决。不过hacker还是非常好用的。使用hacker我可以把浏览器分为3类：IE6 ；IE7和遨游；其他（IE8 chrome ff safari opera等）<br>◆IE6认识的hacker 是下划线_ 和星号 <em><br>◆IE7 遨游认识的hacker是星号 </em><br>比如这样一个CSS设置：<br>height:300px;<em>height:200px;_height:100px;<br>IE6浏览器在读到height:300px的时候会认为高时300px；继续往下读，他也认识</em>heihgt， 所以当IE6读到<em>height:200px的时候会覆盖掉前一条的相冲突设置，认为高度是200px。继续往下读，IE6还认识_height,所以他又会覆盖掉200px高的设置，把高度设置为100px；<br>IE7和遨游也是一样的从高度300px的设置往下读。当它们读到</em>height200px的时候就停下了，因为它们不认识_height。所以它们会把高度解析为200px，剩下的浏览器只认识第一个height:300px;所以他们会把高度解析为300px。因为优先级相同且想冲突的属性设置后一个会覆盖掉前一个，所以书写的次序是很重要的。</p>
+</blockquote>
+<p>###浏览器兼容问题七：透明度的兼容CSS设置</p>
+<blockquote>
+<p>做兼容页面的方法是：每写一小段代码（布局中的一行或者一块）我们都要在不同的浏览器中看是否兼容，当然熟练到一定的程度就没这么麻烦了。建议经常会碰到兼容性问题的新手使用。很多兼容性问题都是因为浏览器对标签的默认属性解析不同造成的，只要我们稍加设置都能轻松地解决这些兼容问题。如果我们熟悉标签的默认属性的话，就能很好的理解为什么会出现兼容问题以及怎么去解决这些兼容问题。<br>/<em> CSS hack</em>/<br>我很少使用hacker的，可能是个人习惯吧，我不喜欢写的代码IE不兼容，然后用hack来解决。不过hacker还是非常好用的。使用hacker我可以把浏览器分为3类：IE6 ；IE7和遨游；其他（IE8 chrome ff safari opera等）<br>◆IE6认识的hacker 是下划线_ 和星号 <em><br>◆IE7 遨游认识的hacker是星号 </em><br>比如这样一个CSS设置：<br>height:300px;<em>height:200px;_height:100px;<br>IE6浏览器在读到height:300px的时候会认为高时300px；继续往下读，他也认识</em>heihgt， 所以当IE6读到<em>height:200px的时候会覆盖掉前一条的相冲突设置，认为高度是200px。继续往下读，IE6还认识_height,所以他又会覆盖掉200px高的设置，把高度设置为100px；<br>IE7和遨游也是一样的从高度300px的设置往下读。当它们读到</em>height200px的时候就停下了，因为它们不认识_height。所以它们会把高度解析为200px，剩下的浏览器只认识第一个height:300px;所以他们会把高度解析为300px。因为优先级相同且想冲突的属性设置后一个会覆盖掉前一个，所以书写的次序是很重要的。</p>
 </blockquote>
 
       
@@ -222,10 +230,6 @@
     <div class="article-info article-info-index">
       
       
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/兼容/">兼容</a></li></ul>
-	</div>
-
       
 
       
@@ -540,10 +544,10 @@
 
 
   
-    <article id="post-Koajs+sequelize+mysql环境搭建" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-jQuery ajax 简单使用" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/02/Koajs+sequelize+mysql环境搭建/" class="article-date">
+      <a href="/2016/03/02/jQuery ajax 简单使用/" class="article-date">
   	<time datetime="2016-03-02T12:10:33.000Z" itemprop="datePublished">2016-03-02</time>
 </a>
     </div>
@@ -557,7 +561,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/02/Koajs+sequelize+mysql环境搭建/">Koajs+sequelize+mysql环境搭建</a>
+      <a class="article-title" href="/2016/03/02/jQuery ajax 简单使用/">jQuery ajax 简单使用</a>
     </h1>
   
 
@@ -566,31 +570,18 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-首先通过npm-init-创建package-json文件"><a href="#1-首先通过npm-init-创建package-json文件" class="headerlink" title="1.首先通过npm init 创建package.json文件"></a>1.首先通过npm init 创建package.json文件</h3><blockquote>
-<p>$ npm init</p>
-<h3 id="2-安装Koajs"><a href="#2-安装Koajs" class="headerlink" title="2.安装Koajs"></a>2.安装Koajs</h3><p>$ npm install koa –save</p>
-</blockquote>
-<p>在根目录下创建一个app.js的文件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</span><br><span class="line"><span class="keyword">var</span> app = koa();</span><br><span class="line"></span><br><span class="line">app.use(<span class="function"><span class="keyword">function</span> *(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.body = <span class="string">'Hello Lxc'</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>);</span><br></pre></td></tr></table></figure></p>
-<h3 id="3-启动服务器"><a href="#3-启动服务器" class="headerlink" title="3.启动服务器"></a>3.启动服务器</h3><blockquote>
-<p>$ node –harmony app.js</p>
-</blockquote>
-<p>我们在浏览器中输入 <a href="http://localhost:3000就可以看见正确的输出了" target="_blank" rel="external">http://localhost:3000就可以看见正确的输出了</a></p>
-<h3 id="4-在工程中安装mysql和sequelize"><a href="#4-在工程中安装mysql和sequelize" class="headerlink" title="4.在工程中安装mysql和sequelize"></a>4.在工程中安装mysql和sequelize</h3><blockquote>
-<p>$ npm install mysql –save</p>
-<p>$  npm install sequelize –save</p>
-<h3 id="5-数据库配置"><a href="#5-数据库配置" class="headerlink" title="5.数据库配置"></a>5.数据库配置</h3><p>在根目录下新建一个models文件夹，在里面新建一个config.js的数据库配置文件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    db: &#123;</span><br><span class="line">        name: <span class="string">'mysql'</span>,</span><br><span class="line">        username: <span class="string">'root'</span>,</span><br><span class="line">        pwd: <span class="string">'xxxxxx'</span>,</span><br><span class="line">         host: <span class="string">'127.0.0.1'</span>,</span><br><span class="line">        database: <span class="string">'test'</span>,</span><br><span class="line">        toString() &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;this.name&#125;</span>://<span class="subst">$&#123;this.username&#125;</span>:<span class="subst">$&#123;this.pwd&#125;</span>@<span class="subst">$&#123;this.host&#125;</span>/<span class="subst">$&#123;this.database&#125;</span>`</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>再新建一个db.js文件，引入config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by lxc on 16-3-3.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">var</span> Sequelize = <span class="built_in">require</span>(<span class="string">'sequelize'</span>);</span><br><span class="line"><span class="keyword">var</span> configs = <span class="built_in">require</span>(<span class="string">'./config.js'</span>);</span><br><span class="line"><span class="keyword">var</span> sequelize = <span class="keyword">new</span> Sequelize(configs.db.toString(), &#123;</span><br><span class="line">    logging: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">sequelize.define(<span class="string">'message'</span>, &#123;</span><br><span class="line">        title: Sequelize.TEXT,</span><br><span class="line">        link: Sequelize.TEXT&#125;);</span><br><span class="line"></span><br><span class="line">sequelize.sync(&#123;</span><br><span class="line">    force: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>接下来我们在命令行中运行db.js</p>
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">   type: <span class="string">'get'</span>,</span><br><span class="line">   url: <span class="string">"change"</span> ,</span><br><span class="line">   data: &#123;</span><br><span class="line">       name：<span class="string">"lxc"</span></span><br><span class="line">   &#125; ,</span><br><span class="line">   success: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       alert(<span class="string">"提交成功"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>我在开发中就像上面这样用，下面简单介绍一下参数：</p>
 <blockquote>
-<p>node db.js</p>
+<ol>
+<li>type<br>get:以get的形式向目的url发送get请求类似如下<br><a href="http://localhost:8765/user/index/change?name=lxc&amp;num=12&amp;id=1" target="_blank" rel="external">http://localhost:8765/user/index/change?name=lxc&amp;num=12&amp;id=1</a><br>post:其数据作为HTTP消息的实体形式发送请求,一般用于数据较多的时候</li>
+<li>url<br>必须，就是请求的接受地址，默认是当前界面的地址</li>
+<li>data<br>请求中发送的数据</li>
+<li>success<br>请求成功后置信地个回调函数</li>
+<li>dataType<br>可选，规定预期的服务器响应的数据类型。<br>默认执行智能判断（xml、json、script 或 html）。</li>
+</ol>
 </blockquote>
-<p>完成后我们去sql查看是否创建成功</p>
-<blockquote>
-<p>mysql&gt; show columns from messages;<br>+———–+———-+——+—–+———+—————-+<br>| Field     | Type     | Null | Key | Default | Extra          |<br>+———–+———-+——+—–+———+—————-+<br>| id        | int(11)  | NO   | PRI | NULL    | auto_increment |<br>| title     | text     | YES  |     | NULL    |                |<br>| link      | text     | YES  |     | NULL    |                |<br>| createdAt | datetime | NO   |     | NULL    |                |<br>| updatedAt | datetime | NO   |     | NULL    |                |<br>+———–+———-+——+—–+———+—————-+<br>5 rows in set (0.00 sec)</p>
-</blockquote>
-<p>看到这个结果就是创建成功了^-^</p>
-<p>这个应用的结构还比较简单，正常开发的话肯定要比这复杂的多，项目的结构都要考虑，如果以后有时间再来补充吧。</p>
+<p>还有一些比较灵活的用法<br>比如get请求时将数据集成在url里面<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">   type: <span class="string">'get'</span>,</span><br><span class="line">   url: <span class="string">"change?name=lxc&amp;num=12&amp;id=1"</span>,</span><br><span class="line">   success: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       alert(<span class="string">"提交成功"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
@@ -599,7 +590,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 	</div>
 
       
@@ -679,10 +670,10 @@
 
 
   
-    <article id="post-jQuery ajax 简单使用" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-linux下mysql的安装与简单操作" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/02/jQuery ajax 简单使用/" class="article-date">
+      <a href="/2016/03/02/linux下mysql的安装与简单操作/" class="article-date">
   	<time datetime="2016-03-02T12:10:33.000Z" itemprop="datePublished">2016-03-02</time>
 </a>
     </div>
@@ -696,7 +687,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/02/jQuery ajax 简单使用/">jQuery ajax 简单使用</a>
+      <a class="article-title" href="/2016/03/02/linux下mysql的安装与简单操作/">linux下mysql的安装与简单操作</a>
     </h1>
   
 
@@ -705,18 +696,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">   type: <span class="string">'get'</span>,</span><br><span class="line">   url: <span class="string">"change"</span> ,</span><br><span class="line">   data: &#123;</span><br><span class="line">       name：<span class="string">"lxc"</span></span><br><span class="line">   &#125; ,</span><br><span class="line">   success: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       alert(<span class="string">"提交成功"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>我在开发中就像上面这样用，下面简单介绍一下参数：</p>
-<blockquote>
-<ol>
-<li>type<br>get:以get的形式向目的url发送get请求类似如下<br><a href="http://localhost:8765/user/index/change?name=lxc&amp;num=12&amp;id=1" target="_blank" rel="external">http://localhost:8765/user/index/change?name=lxc&amp;num=12&amp;id=1</a><br>post:其数据作为HTTP消息的实体形式发送请求,一般用于数据较多的时候</li>
-<li>url<br>必须，就是请求的接受地址，默认是当前界面的地址</li>
-<li>data<br>请求中发送的数据</li>
-<li>success<br>请求成功后置信地个回调函数</li>
-<li>dataType<br>可选，规定预期的服务器响应的数据类型。<br>默认执行智能判断（xml、json、script 或 html）。</li>
-</ol>
+        <h3 id="1-安装命令如下"><a href="#1-安装命令如下" class="headerlink" title="1.安装命令如下"></a>1.安装命令如下</h3><blockquote>
+<p>sudo apt-get install mysql-server<br>然后按照提示输入数据库密码即可</p>
 </blockquote>
-<p>还有一些比较灵活的用法<br>比如get请求时将数据集成在url里面<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">   type: <span class="string">'get'</span>,</span><br><span class="line">   url: <span class="string">"change?name=lxc&amp;num=12&amp;id=1"</span>,</span><br><span class="line">   success: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       alert(<span class="string">"提交成功"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-启动mysql命令"><a href="#2-启动mysql命令" class="headerlink" title="2.启动mysql命令"></a>2.启动mysql命令</h3><blockquote>
+<p>service mysql start<br>这时系统会提示输入密码，正确输入后没有报错就是启动成功了</p>
+</blockquote>
+<h3 id="3-关闭mysql服务"><a href="#3-关闭mysql服务" class="headerlink" title="3.关闭mysql服务"></a>3.关闭mysql服务</h3><blockquote>
+<p>service mysql stop</p>
+</blockquote>
+<h3 id="4-连接数据库"><a href="#4-连接数据库" class="headerlink" title="4.连接数据库"></a>4.连接数据库</h3><blockquote>
+<p>mysql -u root -p<br>这时系统会提示输入密码，正确输入后会进去mysql命令行下</p>
+</blockquote>
+<h3 id="5-查看数据库"><a href="#5-查看数据库" class="headerlink" title="5.查看数据库"></a>5.查看数据库</h3><blockquote>
+<p>show databases;<br>需要注意的是mysql命令后面一定要加分号，否则不会运行</p>
+</blockquote>
+<h3 id="6-创建数据库"><a href="#6-创建数据库" class="headerlink" title="6.创建数据库"></a>6.创建数据库</h3><blockquote>
+<p>create database name;</p>
+</blockquote>
+<h3 id="7-创建表"><a href="#7-创建表" class="headerlink" title="7.创建表"></a>7.创建表</h3><blockquote>
+<p>create table user(id int(3) auto_increment not null primary key, name char(8));</p>
+</blockquote>
 
       
     </div>
@@ -725,72 +725,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-采用正则表达式获取地址栏参数" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/02/采用正则表达式获取地址栏参数/" class="article-date">
-  	<time datetime="2016-03-02T12:10:33.000Z" itemprop="datePublished">2016-03-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/02/采用正则表达式获取地址栏参数/">采用正则表达式获取地址栏参数</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-采用正则表达式获取地址栏参数："><a href="#1-采用正则表达式获取地址栏参数：" class="headerlink" title="1.采用正则表达式获取地址栏参数："></a>1.采用正则表达式获取地址栏参数：</h3><p>根据url和参数名获取参数值<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GetQueryString</span>(<span class="params">name</span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">     <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"(^|&amp;)"</span>+ name +<span class="string">"=([^&amp;]*)(&amp;|$)"</span>);</span><br><span class="line">     <span class="keyword">var</span> r = <span class="built_in">window</span>.location.search.substr(<span class="number">1</span>).match(reg);</span><br><span class="line">     <span class="keyword">if</span>(r!=<span class="literal">null</span>)<span class="keyword">return</span>  <span class="built_in">unescape</span>(r[<span class="number">2</span>]); <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 调用方法</span></span><br><span class="line">alert(GetQueryString(<span class="string">"参数名1"</span>));</span><br></pre></td></tr></table></figure></p>
-<h3 id="2-修改url参数值："><a href="#2-修改url参数值：" class="headerlink" title="2.修改url参数值："></a>2.修改url参数值：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeURLPar</span>(<span class="params">destiny, par, par_value</span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> pattern = par+<span class="string">'=([^&amp;]*)'</span>;</span><br><span class="line">    <span class="keyword">var</span> replaceText = par+<span class="string">'='</span>+par_value;</span><br><span class="line">    <span class="keyword">if</span> (destiny.match(pattern))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">var</span> tmp = <span class="string">'/\\'</span>+par+<span class="string">'=[^&amp;]*/'</span>;</span><br><span class="line">        tmp = destiny.replace(<span class="built_in">eval</span>(tmp), replaceText);</span><br><span class="line">        <span class="keyword">return</span> (tmp);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (destiny.match(<span class="string">'[\?]'</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> destiny+<span class="string">'&amp;'</span>+ replaceText;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> destiny+<span class="string">'?'</span>+replaceText;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> destiny+<span class="string">'\n'</span>+par+<span class="string">'\n'</span>+par_value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li>destiny是目标字符串</li>
-<li>par是参数名</li>
-<li>par_value是参数要更改的值</li>
-<li>如果url中没有选定的参数值，会自动添加</li>
-<li>缺点是还不能删除参数<br>*</li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
 	</div>
 
       
@@ -852,6 +787,87 @@
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-Koajs+sequelize+mysql环境搭建" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/02/Koajs+sequelize+mysql环境搭建/" class="article-date">
+  	<time datetime="2016-03-02T12:10:33.000Z" itemprop="datePublished">2016-03-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/02/Koajs+sequelize+mysql环境搭建/">Koajs+sequelize+mysql环境搭建</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-首先通过npm-init-创建package-json文件"><a href="#1-首先通过npm-init-创建package-json文件" class="headerlink" title="1.首先通过npm init 创建package.json文件"></a>1.首先通过npm init 创建package.json文件</h3><blockquote>
+<p>$ npm init</p>
+<h3 id="2-安装Koajs"><a href="#2-安装Koajs" class="headerlink" title="2.安装Koajs"></a>2.安装Koajs</h3><p>$ npm install koa –save</p>
+</blockquote>
+<p>在根目录下创建一个app.js的文件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</span><br><span class="line"><span class="keyword">var</span> app = koa();</span><br><span class="line"></span><br><span class="line">app.use(<span class="function"><span class="keyword">function</span> *(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.body = <span class="string">'Hello Lxc'</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>);</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-启动服务器"><a href="#3-启动服务器" class="headerlink" title="3.启动服务器"></a>3.启动服务器</h3><blockquote>
+<p>$ node –harmony app.js</p>
+</blockquote>
+<p>我们在浏览器中输入 <a href="http://localhost:3000就可以看见正确的输出了" target="_blank" rel="external">http://localhost:3000就可以看见正确的输出了</a></p>
+<h3 id="4-在工程中安装mysql和sequelize"><a href="#4-在工程中安装mysql和sequelize" class="headerlink" title="4.在工程中安装mysql和sequelize"></a>4.在工程中安装mysql和sequelize</h3><blockquote>
+<p>$ npm install mysql –save</p>
+<p>$  npm install sequelize –save</p>
+<h3 id="5-数据库配置"><a href="#5-数据库配置" class="headerlink" title="5.数据库配置"></a>5.数据库配置</h3><p>在根目录下新建一个models文件夹，在里面新建一个config.js的数据库配置文件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    db: &#123;</span><br><span class="line">        name: <span class="string">'mysql'</span>,</span><br><span class="line">        username: <span class="string">'root'</span>,</span><br><span class="line">        pwd: <span class="string">'xxxxxx'</span>,</span><br><span class="line">         host: <span class="string">'127.0.0.1'</span>,</span><br><span class="line">        database: <span class="string">'test'</span>,</span><br><span class="line">        toString() &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;this.name&#125;</span>://<span class="subst">$&#123;this.username&#125;</span>:<span class="subst">$&#123;this.pwd&#125;</span>@<span class="subst">$&#123;this.host&#125;</span>/<span class="subst">$&#123;this.database&#125;</span>`</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>再新建一个db.js文件，引入config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by lxc on 16-3-3.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">var</span> Sequelize = <span class="built_in">require</span>(<span class="string">'sequelize'</span>);</span><br><span class="line"><span class="keyword">var</span> configs = <span class="built_in">require</span>(<span class="string">'./config.js'</span>);</span><br><span class="line"><span class="keyword">var</span> sequelize = <span class="keyword">new</span> Sequelize(configs.db.toString(), &#123;</span><br><span class="line">    logging: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">sequelize.define(<span class="string">'message'</span>, &#123;</span><br><span class="line">        title: Sequelize.TEXT,</span><br><span class="line">        link: Sequelize.TEXT&#125;);</span><br><span class="line"></span><br><span class="line">sequelize.sync(&#123;</span><br><span class="line">    force: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>接下来我们在命令行中运行db.js</p>
+<blockquote>
+<p>node db.js</p>
+</blockquote>
+<p>完成后我们去sql查看是否创建成功</p>
+<blockquote>
+<p>mysql&gt; show columns from messages;<br>+———–+———-+——+—–+———+—————-+<br>| Field     | Type     | Null | Key | Default | Extra          |<br>+———–+———-+——+—–+———+—————-+<br>| id        | int(11)  | NO   | PRI | NULL    | auto_increment |<br>| title     | text     | YES  |     | NULL    |                |<br>| link      | text     | YES  |     | NULL    |                |<br>| createdAt | datetime | NO   |     | NULL    |                |<br>| updatedAt | datetime | NO   |     | NULL    |                |<br>+———–+———-+——+—–+———+—————-+<br>5 rows in set (0.00 sec)</p>
+</blockquote>
+<p>看到这个结果就是创建成功了^-^</p>
+<p>这个应用的结构还比较简单，正常开发的话肯定要比这复杂的多，项目的结构都要考虑，如果以后有时间再来补充吧。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
 	</div>
 
       

@@ -105,7 +105,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/C/" style="font-size: 16.67px;">C#</a> <a href="/tags/git/" style="font-size: 13.33px;">git</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/兼容/" style="font-size: 10px;">兼容</a>
+						<a href="/tags/C/" style="font-size: 15px;">C#</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/兼容/" style="font-size: 10px;">兼容</a>
 					</div>
 				</section>
 				
@@ -170,6 +170,150 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-初次上传工程到github的方法(2)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/14/初次上传工程到github的方法(2)/" class="article-date">
+  	<time datetime="2016-03-14T05:35:39.451Z" itemprop="datePublished">2016-03-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/14/初次上传工程到github的方法(2)/">初次上传工程到github的方法(2)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>此方法适用于远程仓库为空的前提下</strong></p>
+<h3 id="1-建立仓库"><a href="#1-建立仓库" class="headerlink" title="1. 建立仓库"></a>1. 建立仓库</h3><p> 这个就不做介绍了，在github新建就行<br> <strong>新建后确保仓库为空</strong></p>
+<h3 id="2-进入项目文件夹"><a href="#2-进入项目文件夹" class="headerlink" title="2. 进入项目文件夹"></a>2. 进入项目文件夹</h3><blockquote>
+<p>git init<br>git add .<br>git commit -m ‘first’<br>git remote add origin ———仓库地址<br>git push -u origin master</p>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-初次上传工程到github的方法(1)" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/14/初次上传工程到github的方法(1)/" class="article-date">
+  	<time datetime="2016-03-14T05:29:42.511Z" itemprop="datePublished">2016-03-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/14/初次上传工程到github的方法(1)/">初次上传工程到github的方法(1)</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><strong>此方法适用于远程仓库已经有文件的前提下</strong></p>
+<h3 id="1-建立仓库"><a href="#1-建立仓库" class="headerlink" title="1. 建立仓库"></a>1. 建立仓库</h3><p> 这个就不做介绍了，在github新建就行</p>
+<h3 id="2-克隆"><a href="#2-克隆" class="headerlink" title="2. 克隆"></a>2. 克隆</h3><blockquote>
+<p>git clone address.git</p>
+</blockquote>
+<h3 id="3-进入项目文件夹"><a href="#3-进入项目文件夹" class="headerlink" title="3. 进入项目文件夹"></a>3. 进入项目文件夹</h3><h3 id="4-将自己的要上传的文件复制进来"><a href="#4-将自己的要上传的文件复制进来" class="headerlink" title="4. 将自己的要上传的文件复制进来"></a>4. 将自己的要上传的文件复制进来</h3><h3 id="5-同步"><a href="#5-同步" class="headerlink" title="5. 同步"></a>5. 同步</h3><blockquote>
+<p>git add .<br>git commit -m ‘first’<br>git push</p>
+</blockquote>
+<h3 id="注意！"><a href="#注意！" class="headerlink" title="注意！"></a>注意！</h3><p>如果在add的时候报错类似：</p>
+<blockquote>
+<p>LF will be replaced by CRLF | fatal: CRLF would be replaced by LF</p>
+</blockquote>
+<p>是因为Git的换行符检查功能;</p>
+<p>假如你正在Windows上写程序，又或者你正在和其他人合作，他们在Windows上编程，而你却在其他系统上，在这些情况下，你可能会遇到行尾结束符问题。这是因为Windows使用回车和换行两个字符来结束一行，而Mac和Linux只使用换行一个字符。虽然这是小问题，但它会极大地扰乱跨平台协作。</p>
+<p>Git可以在你提交时自动地把行结束符CRLF转换成LF，而在签出代码时把LF转换成CRLF。用core.autocrlf来打开此项功能，如果是在Windows系统上，把它设置成true，这样当签出代码时，LF会被转换成CRLF：</p>
+<blockquote>
+<p>$ git config –global core.autocrlf true</p>
+</blockquote>
+<p>Linux或Mac系统使用LF作为行结束符，因此你不想 Git 在签出文件时进行自动的转换；当一个以CRLF为行结束符的文件不小心被引入时你肯定想进行修正，把core.autocrlf设置成input来告诉 Git 在提交时把CRLF转换成LF，签出时不转换：</p>
+<blockquote>
+<p>$ git config –global core.autocrlf input</p>
+</blockquote>
+<p>这样会在Windows系统上的签出文件中保留CRLF，会在Mac和Linux系统上，包括仓库中保留LF。</p>
+<p>如果你是Windows程序员，且正在开发仅运行在Windows上的项目，可以设置false取消此功能，把回车符记录在库中：</p>
+<blockquote>
+<p>$ git config –global core.autocrlf false</p>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-常见浏览器兼容性问题与解决方案" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -325,91 +469,6 @@
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-初次上传工程到github的方法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/06/初次上传工程到github的方法/" class="article-date">
-  	<time datetime="2016-03-06T08:22:38.994Z" itemprop="datePublished">2016-03-06</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/06/初次上传工程到github的方法/">初次上传工程到github的方法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-建立仓库"><a href="#1-建立仓库" class="headerlink" title="1. 建立仓库"></a>1. 建立仓库</h3><p> 这个就不做介绍了，在github新建就行</p>
-<h3 id="2-克隆"><a href="#2-克隆" class="headerlink" title="2. 克隆"></a>2. 克隆</h3><blockquote>
-<p>git clone address.git</p>
-</blockquote>
-<h3 id="3-进入项目文件夹并与云端同步"><a href="#3-进入项目文件夹并与云端同步" class="headerlink" title="3. 进入项目文件夹并与云端同步"></a>3. 进入项目文件夹并与云端同步</h3><blockquote>
-<p>git pull address.git   </p>
-</blockquote>
-<h3 id="4-将自己的工程文件复制进来"><a href="#4-将自己的工程文件复制进来" class="headerlink" title="4. 将自己的工程文件复制进来"></a>4. 将自己的工程文件复制进来</h3><h3 id="5-同步"><a href="#5-同步" class="headerlink" title="5. 同步"></a>5. 同步</h3><blockquote>
-<p>git add .<br>git commit -m ‘first’<br>git push</p>
-</blockquote>
-<h3 id="注意！"><a href="#注意！" class="headerlink" title="注意！"></a>注意！</h3><p>如果在add的时候报错类似：</p>
-<blockquote>
-<p>LF will be replaced by CRLF | fatal: CRLF would be replaced by LF</p>
-</blockquote>
-<p>是因为Git的换行符检查功能;</p>
-<p>假如你正在Windows上写程序，又或者你正在和其他人合作，他们在Windows上编程，而你却在其他系统上，在这些情况下，你可能会遇到行尾结束符问题。这是因为Windows使用回车和换行两个字符来结束一行，而Mac和Linux只使用换行一个字符。虽然这是小问题，但它会极大地扰乱跨平台协作。</p>
-<p>Git可以在你提交时自动地把行结束符CRLF转换成LF，而在签出代码时把LF转换成CRLF。用core.autocrlf来打开此项功能，如果是在Windows系统上，把它设置成true，这样当签出代码时，LF会被转换成CRLF：</p>
-<blockquote>
-<p>$ git config –global core.autocrlf true</p>
-</blockquote>
-<p>Linux或Mac系统使用LF作为行结束符，因此你不想 Git 在签出文件时进行自动的转换；当一个以CRLF为行结束符的文件不小心被引入时你肯定想进行修正，把core.autocrlf设置成input来告诉 Git 在提交时把CRLF转换成LF，签出时不转换：</p>
-<blockquote>
-<p>$ git config –global core.autocrlf input</p>
-</blockquote>
-<p>这样会在Windows系统上的签出文件中保留CRLF，会在Mac和Linux系统上，包括仓库中保留LF。</p>
-<p>如果你是Windows程序员，且正在开发仅运行在Windows上的项目，可以设置false取消此功能，把回车符记录在库中：</p>
-<blockquote>
-<p>$ git config –global core.autocrlf false</p>
-</blockquote>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li></ul>
 	</div>
 
       
@@ -615,10 +674,10 @@
 
 
   
-    <article id="post-Koajs+sequelize+mysql环境搭建" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Csharp生成条形码" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/02/Koajs+sequelize+mysql环境搭建/" class="article-date">
+      <a href="/2016/03/02/Csharp生成条形码/" class="article-date">
   	<time datetime="2016-03-02T12:10:33.000Z" itemprop="datePublished">2016-03-02</time>
 </a>
     </div>
@@ -632,7 +691,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/02/Koajs+sequelize+mysql环境搭建/">Koajs+sequelize+mysql环境搭建</a>
+      <a class="article-title" href="/2016/03/02/Csharp生成条形码/">C#生成条形码</a>
     </h1>
   
 
@@ -641,31 +700,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-首先通过npm-init-创建package-json文件"><a href="#1-首先通过npm-init-创建package-json文件" class="headerlink" title="1.首先通过npm init 创建package.json文件"></a>1.首先通过npm init 创建package.json文件</h3><blockquote>
-<p>$ npm init</p>
-<h3 id="2-安装Koajs"><a href="#2-安装Koajs" class="headerlink" title="2.安装Koajs"></a>2.安装Koajs</h3><p>$ npm install koa –save</p>
-</blockquote>
-<p>在根目录下创建一个app.js的文件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</span><br><span class="line"><span class="keyword">var</span> app = koa();</span><br><span class="line"></span><br><span class="line">app.use(<span class="function"><span class="keyword">function</span> *(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.body = <span class="string">'Hello Lxc'</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>);</span><br></pre></td></tr></table></figure></p>
-<h3 id="3-启动服务器"><a href="#3-启动服务器" class="headerlink" title="3.启动服务器"></a>3.启动服务器</h3><blockquote>
-<p>$ node –harmony app.js</p>
-</blockquote>
-<p>我们在浏览器中输入 <a href="http://localhost:3000就可以看见正确的输出了" target="_blank" rel="external">http://localhost:3000就可以看见正确的输出了</a></p>
-<h3 id="4-在工程中安装mysql和sequelize"><a href="#4-在工程中安装mysql和sequelize" class="headerlink" title="4.在工程中安装mysql和sequelize"></a>4.在工程中安装mysql和sequelize</h3><blockquote>
-<p>$ npm install mysql –save</p>
-<p>$  npm install sequelize –save</p>
-<h3 id="5-数据库配置"><a href="#5-数据库配置" class="headerlink" title="5.数据库配置"></a>5.数据库配置</h3><p>在根目录下新建一个models文件夹，在里面新建一个config.js的数据库配置文件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    db: &#123;</span><br><span class="line">        name: <span class="string">'mysql'</span>,</span><br><span class="line">        username: <span class="string">'root'</span>,</span><br><span class="line">        pwd: <span class="string">'xxxxxx'</span>,</span><br><span class="line">         host: <span class="string">'127.0.0.1'</span>,</span><br><span class="line">        database: <span class="string">'test'</span>,</span><br><span class="line">        toString() &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;this.name&#125;</span>://<span class="subst">$&#123;this.username&#125;</span>:<span class="subst">$&#123;this.pwd&#125;</span>@<span class="subst">$&#123;this.host&#125;</span>/<span class="subst">$&#123;this.database&#125;</span>`</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>再新建一个db.js文件，引入config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by lxc on 16-3-3.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">var</span> Sequelize = <span class="built_in">require</span>(<span class="string">'sequelize'</span>);</span><br><span class="line"><span class="keyword">var</span> configs = <span class="built_in">require</span>(<span class="string">'./config.js'</span>);</span><br><span class="line"><span class="keyword">var</span> sequelize = <span class="keyword">new</span> Sequelize(configs.db.toString(), &#123;</span><br><span class="line">    logging: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">sequelize.define(<span class="string">'message'</span>, &#123;</span><br><span class="line">        title: Sequelize.TEXT,</span><br><span class="line">        link: Sequelize.TEXT&#125;);</span><br><span class="line"></span><br><span class="line">sequelize.sync(&#123;</span><br><span class="line">    force: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>接下来我们在命令行中运行db.js</p>
-<blockquote>
-<p>node db.js</p>
-</blockquote>
-<p>完成后我们去sql查看是否创建成功</p>
-<blockquote>
-<p>mysql&gt; show columns from messages;<br>+———–+———-+——+—–+———+—————-+<br>| Field     | Type     | Null | Key | Default | Extra          |<br>+———–+———-+——+—–+———+—————-+<br>| id        | int(11)  | NO   | PRI | NULL    | auto_increment |<br>| title     | text     | YES  |     | NULL    |                |<br>| link      | text     | YES  |     | NULL    |                |<br>| createdAt | datetime | NO   |     | NULL    |                |<br>| updatedAt | datetime | NO   |     | NULL    |                |<br>+———–+———-+——+—–+———+—————-+<br>5 rows in set (0.00 sec)</p>
-</blockquote>
-<p>看到这个结果就是创建成功了^-^</p>
-<p>这个应用的结构还比较简单，正常开发的话肯定要比这复杂的多，项目的结构都要考虑，如果以后有时间再来补充吧。</p>
+        <p>首先在程序中添加zxing包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">using  zxing;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">EncodingOptions op = new EncodingOptions();</span><br><span class="line">op.Width = 400;</span><br><span class="line">op.Height = 200;</span><br><span class="line">BarcodeWriter writer = new BarcodeWriter();</span><br><span class="line">writer.Options = op;</span><br><span class="line">writer.Format = BarcodeFormat.CODE_39;</span><br><span class="line"></span><br><span class="line">Bitmap img = writer.Write(s);</span><br><span class="line"></span><br><span class="line">//自动保存图片到当前目录</span><br><span class="line">string fullUrl = dic+&quot;\\&quot;;</span><br><span class="line">if (Directory.Exists(fullUrl) == false)</span><br><span class="line">&#123;</span><br><span class="line">    Directory.CreateDirectory(fullUrl);   </span><br><span class="line">    //如果文件夹不存在，直接创建文件夹。</span><br><span class="line">&#125;</span><br><span class="line">var filename = fullUrl + name+ &quot;.jpg&quot;;</span><br><span class="line">img.Save(filename, ImageFormat.Jpeg);</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -674,7 +710,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li></ul>
 	</div>
 
       
@@ -804,64 +840,6 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">//在word对应的mark位置插入文字</span><br><span class="line">public void bookmark(WordprocessingDocument file, string markname, string str)</span><br><span class="line">    &#123;</span><br><span class="line">        Dictionary&lt;String, BookmarkStart&gt; bookmarkMap =</span><br><span class="line">        new Dictionary&lt;String, BookmarkStart&gt;();</span><br><span class="line"></span><br><span class="line">        foreach (BookmarkStart bookmarkStart in file.MainDocumentPart.RootElement.Descendants&lt;BookmarkStart&gt;())</span><br><span class="line">            &#123;</span><br><span class="line">                if (bookmarkStart.Name == markname)</span><br><span class="line">                &#123;</span><br><span class="line">                    var run = new Run();</span><br><span class="line">                    run.Append(new Text(str));</span><br><span class="line">                    bookmarkStart.InsertAfterSelf(run);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            //foreach (BookmarkStart bookmarkStart in bookmarkMap.Values)</span><br><span class="line">            //&#123;</span><br><span class="line">            //    var run = new Run();</span><br><span class="line">            //    run.Append(new Text(&quot;Hello World&quot;));</span><br><span class="line">            //    bookmarkStart.InsertAfterSelf(run);         </span><br><span class="line">            //&#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">//打开一个word插入文字</span><br><span class="line">public static void AddString(string filePath, string str)</span><br><span class="line">    &#123;</span><br><span class="line">            using (WordprocessingDocument doc = WordprocessingDocument.Open(filePath, true))</span><br><span class="line">            &#123;</span><br><span class="line">                Paragraph paragraph = new Paragraph();</span><br><span class="line">                Run run = new Run();</span><br><span class="line"></span><br><span class="line">                RunProperties runProperties = new RunProperties(); //属性</span><br><span class="line"></span><br><span class="line">                //RunFonts fonts = new RunFonts() &#123; EastAsia = &quot;DFKai-SB&quot; &#125;; // 设置字体</span><br><span class="line">                //FontSize size = new FontSize() &#123; Val = &quot;52&quot; &#125;; // 设置字体大小</span><br><span class="line">                //Color color = new Color() &#123; Val = &quot;red&quot; &#125;; // 设置字体样式</span><br><span class="line"></span><br><span class="line">                // 将样式添加到属性里面</span><br><span class="line">                //runProperties.Append(color);</span><br><span class="line">                //runProperties.Append(size);</span><br><span class="line">                //runProperties.Append(fonts);</span><br><span class="line"></span><br><span class="line">                //run.Append(runProperties);</span><br><span class="line">                run.Append(new Text(str));</span><br><span class="line">                paragraph.Append(run);</span><br><span class="line">                doc.MainDocumentPart.Document.Body.Append(paragraph);</span><br><span class="line">                doc.MainDocumentPart.Document.Save();</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">//根据文字新建word</span><br><span class="line">public void Create(string filePath, string str)</span><br><span class="line">    &#123;</span><br><span class="line">    var psth = Server.MapPath(@&quot;~/Word&quot;);</span><br><span class="line">    using (WordprocessingDocument doc = WordprocessingDocument.Create(psth + &quot;\\t.docx&quot;, WordprocessingDocumentType.Document))</span><br><span class="line">        &#123;</span><br><span class="line">            // ②：为doc添加MainDocumentPart部分  </span><br><span class="line">            MainDocumentPart mainPart = doc.AddMainDocumentPart();</span><br><span class="line"></span><br><span class="line">            // ③：为mainPart添加Document，对应于Word里的文档内容部分  </span><br><span class="line">            mainPart.Document = new Document();</span><br><span class="line"></span><br><span class="line">            // ④：为Document添加Body，之后所有于内容相关的均在此body中  </span><br><span class="line">            Body body = mainPart.Document.AppendChild(new Body());</span><br><span class="line"></span><br><span class="line">            // ⑤：添加段落P，P中包含一个文本“TEST”  </span><br><span class="line">            Paragraph p = mainPart.Document.Body.AppendChild(new Paragraph());</span><br><span class="line">            p.AppendChild(new Run(new Text(&quot;TEST&quot;)));</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Csharp生成条形码" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/02/Csharp生成条形码/" class="article-date">
-  	<time datetime="2016-03-02T12:10:33.000Z" itemprop="datePublished">2016-03-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/02/Csharp生成条形码/">C#生成条形码</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>首先在程序中添加zxing包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">using  zxing;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">EncodingOptions op = new EncodingOptions();</span><br><span class="line">op.Width = 400;</span><br><span class="line">op.Height = 200;</span><br><span class="line">BarcodeWriter writer = new BarcodeWriter();</span><br><span class="line">writer.Options = op;</span><br><span class="line">writer.Format = BarcodeFormat.CODE_39;</span><br><span class="line"></span><br><span class="line">Bitmap img = writer.Write(s);</span><br><span class="line"></span><br><span class="line">//自动保存图片到当前目录</span><br><span class="line">string fullUrl = dic+&quot;\\&quot;;</span><br><span class="line">if (Directory.Exists(fullUrl) == false)</span><br><span class="line">&#123;</span><br><span class="line">    Directory.CreateDirectory(fullUrl);   </span><br><span class="line">    //如果文件夹不存在，直接创建文件夹。</span><br><span class="line">&#125;</span><br><span class="line">var filename = fullUrl + name+ &quot;.jpg&quot;;</span><br><span class="line">img.Save(filename, ImageFormat.Jpeg);</span><br></pre></td></tr></table></figure>
 
       
     </div>

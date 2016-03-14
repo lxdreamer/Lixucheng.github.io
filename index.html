@@ -200,10 +200,7 @@
         <h3 id="浏览器兼容问题一：不同浏览器的标签默认的外补丁和内补丁不同"><a href="#浏览器兼容问题一：不同浏览器的标签默认的外补丁和内补丁不同" class="headerlink" title="浏览器兼容问题一：不同浏览器的标签默认的外补丁和内补丁不同"></a>浏览器兼容问题一：不同浏览器的标签默认的外补丁和内补丁不同</h3><blockquote>
 <p>问题症状：随便写几个标签，不加样式控制的情况下，各自的margin 和padding差异较大。<br>碰到频率:100%<br><b>解决方案：CSS里    </b></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">*&#123;margin:<span class="number">0</span>;padding:<span class="number">0</span>;&#125;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p></p>
-<blockquote>
-<p>备注：这个是最常见的也是最易解决的一个浏览器兼容性问题，几乎所有的CSS文件开头都会用通配符*来设置各个标签的内外补丁是0。</p>
+<p><br>备注：这个是最常见的也是最易解决的一个浏览器兼容性问题，几乎所有的CSS文件开头都会用通配符*来设置各个标签的内外补丁是0。</p>
 </blockquote>
 <h3 id="浏览器兼容问题二：块属性标签float后，又有横行的margin情况下，在IE6显示margin比设置的大"><a href="#浏览器兼容问题二：块属性标签float后，又有横行的margin情况下，在IE6显示margin比设置的大" class="headerlink" title="浏览器兼容问题二：块属性标签float后，又有横行的margin情况下，在IE6显示margin比设置的大"></a>浏览器兼容问题二：块属性标签float后，又有横行的margin情况下，在IE6显示margin比设置的大</h3><blockquote>
 <p>问题症状：随便写几个标签，不加样式控制的情况下，各自的margin 和padding差异较大。<br>问题症状：常见症状是IE6中后面的一块被顶到下一行    碰到频率：90%（稍微复杂点的页面都会碰到，float布局最常见的浏览器兼容问题）<br><b>解决方案：在float的标签样式控制中加入display:inline;将其转化为行内属性</b><br>  备注：我们最常用的就是div+CSS布局了，而div就是一个典型的块属性标签，横向布局的时候我们通常都是用div float实现的，横向的间距设置如果用margin实现，这就是一个必然会碰到的兼容性问题。</p>
@@ -618,10 +615,10 @@
 
 
   
-    <article id="post-Koajs+sequelize+mysql环境搭建" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Csharp生成条形码" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/02/Koajs+sequelize+mysql环境搭建/" class="article-date">
+      <a href="/2016/03/02/Csharp生成条形码/" class="article-date">
   	<time datetime="2016-03-02T12:10:33.000Z" itemprop="datePublished">2016-03-02</time>
 </a>
     </div>
@@ -635,7 +632,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/02/Koajs+sequelize+mysql环境搭建/">Koajs+sequelize+mysql环境搭建</a>
+      <a class="article-title" href="/2016/03/02/Csharp生成条形码/">C#生成条形码</a>
     </h1>
   
 
@@ -644,31 +641,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-首先通过npm-init-创建package-json文件"><a href="#1-首先通过npm-init-创建package-json文件" class="headerlink" title="1.首先通过npm init 创建package.json文件"></a>1.首先通过npm init 创建package.json文件</h3><blockquote>
-<p>$ npm init</p>
-<h3 id="2-安装Koajs"><a href="#2-安装Koajs" class="headerlink" title="2.安装Koajs"></a>2.安装Koajs</h3><p>$ npm install koa –save</p>
-</blockquote>
-<p>在根目录下创建一个app.js的文件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</span><br><span class="line"><span class="keyword">var</span> app = koa();</span><br><span class="line"></span><br><span class="line">app.use(<span class="function"><span class="keyword">function</span> *(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.body = <span class="string">'Hello Lxc'</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>);</span><br></pre></td></tr></table></figure></p>
-<h3 id="3-启动服务器"><a href="#3-启动服务器" class="headerlink" title="3.启动服务器"></a>3.启动服务器</h3><blockquote>
-<p>$ node –harmony app.js</p>
-</blockquote>
-<p>我们在浏览器中输入 <a href="http://localhost:3000就可以看见正确的输出了" target="_blank" rel="external">http://localhost:3000就可以看见正确的输出了</a></p>
-<h3 id="4-在工程中安装mysql和sequelize"><a href="#4-在工程中安装mysql和sequelize" class="headerlink" title="4.在工程中安装mysql和sequelize"></a>4.在工程中安装mysql和sequelize</h3><blockquote>
-<p>$ npm install mysql –save</p>
-<p>$  npm install sequelize –save</p>
-<h3 id="5-数据库配置"><a href="#5-数据库配置" class="headerlink" title="5.数据库配置"></a>5.数据库配置</h3><p>在根目录下新建一个models文件夹，在里面新建一个config.js的数据库配置文件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    db: &#123;</span><br><span class="line">        name: <span class="string">'mysql'</span>,</span><br><span class="line">        username: <span class="string">'root'</span>,</span><br><span class="line">        pwd: <span class="string">'xxxxxx'</span>,</span><br><span class="line">         host: <span class="string">'127.0.0.1'</span>,</span><br><span class="line">        database: <span class="string">'test'</span>,</span><br><span class="line">        toString() &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;this.name&#125;</span>://<span class="subst">$&#123;this.username&#125;</span>:<span class="subst">$&#123;this.pwd&#125;</span>@<span class="subst">$&#123;this.host&#125;</span>/<span class="subst">$&#123;this.database&#125;</span>`</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>再新建一个db.js文件，引入config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by lxc on 16-3-3.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">var</span> Sequelize = <span class="built_in">require</span>(<span class="string">'sequelize'</span>);</span><br><span class="line"><span class="keyword">var</span> configs = <span class="built_in">require</span>(<span class="string">'./config.js'</span>);</span><br><span class="line"><span class="keyword">var</span> sequelize = <span class="keyword">new</span> Sequelize(configs.db.toString(), &#123;</span><br><span class="line">    logging: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">sequelize.define(<span class="string">'message'</span>, &#123;</span><br><span class="line">        title: Sequelize.TEXT,</span><br><span class="line">        link: Sequelize.TEXT&#125;);</span><br><span class="line"></span><br><span class="line">sequelize.sync(&#123;</span><br><span class="line">    force: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>接下来我们在命令行中运行db.js</p>
-<blockquote>
-<p>node db.js</p>
-</blockquote>
-<p>完成后我们去sql查看是否创建成功</p>
-<blockquote>
-<p>mysql&gt; show columns from messages;<br>+———–+———-+——+—–+———+—————-+<br>| Field     | Type     | Null | Key | Default | Extra          |<br>+———–+———-+——+—–+———+—————-+<br>| id        | int(11)  | NO   | PRI | NULL    | auto_increment |<br>| title     | text     | YES  |     | NULL    |                |<br>| link      | text     | YES  |     | NULL    |                |<br>| createdAt | datetime | NO   |     | NULL    |                |<br>| updatedAt | datetime | NO   |     | NULL    |                |<br>+———–+———-+——+—–+———+—————-+<br>5 rows in set (0.00 sec)</p>
-</blockquote>
-<p>看到这个结果就是创建成功了^-^</p>
-<p>这个应用的结构还比较简单，正常开发的话肯定要比这复杂的多，项目的结构都要考虑，如果以后有时间再来补充吧。</p>
+        <p>首先在程序中添加zxing包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">using  zxing;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">EncodingOptions op = new EncodingOptions();</span><br><span class="line">op.Width = 400;</span><br><span class="line">op.Height = 200;</span><br><span class="line">BarcodeWriter writer = new BarcodeWriter();</span><br><span class="line">writer.Options = op;</span><br><span class="line">writer.Format = BarcodeFormat.CODE_39;</span><br><span class="line"></span><br><span class="line">Bitmap img = writer.Write(s);</span><br><span class="line"></span><br><span class="line">//自动保存图片到当前目录</span><br><span class="line">string fullUrl = dic+&quot;\\&quot;;</span><br><span class="line">if (Directory.Exists(fullUrl) == false)</span><br><span class="line">&#123;</span><br><span class="line">    Directory.CreateDirectory(fullUrl);   </span><br><span class="line">    //如果文件夹不存在，直接创建文件夹。</span><br><span class="line">&#125;</span><br><span class="line">var filename = fullUrl + name+ &quot;.jpg&quot;;</span><br><span class="line">img.Save(filename, ImageFormat.Jpeg);</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -677,84 +651,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-linux下mysql的安装与简单操作" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/02/linux下mysql的安装与简单操作/" class="article-date">
-  	<time datetime="2016-03-02T12:10:33.000Z" itemprop="datePublished">2016-03-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/02/linux下mysql的安装与简单操作/">linux下mysql的安装与简单操作</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-安装命令如下"><a href="#1-安装命令如下" class="headerlink" title="1.安装命令如下"></a>1.安装命令如下</h3><blockquote>
-<p>sudo apt-get install mysql-server<br>然后按照提示输入数据库密码即可</p>
-</blockquote>
-<h3 id="2-启动mysql命令"><a href="#2-启动mysql命令" class="headerlink" title="2.启动mysql命令"></a>2.启动mysql命令</h3><blockquote>
-<p>service mysql start<br>这时系统会提示输入密码，正确输入后没有报错就是启动成功了</p>
-</blockquote>
-<h3 id="3-关闭mysql服务"><a href="#3-关闭mysql服务" class="headerlink" title="3.关闭mysql服务"></a>3.关闭mysql服务</h3><blockquote>
-<p>service mysql stop</p>
-</blockquote>
-<h3 id="4-连接数据库"><a href="#4-连接数据库" class="headerlink" title="4.连接数据库"></a>4.连接数据库</h3><blockquote>
-<p>mysql -u root -p<br>这时系统会提示输入密码，正确输入后会进去mysql命令行下</p>
-</blockquote>
-<h3 id="5-查看数据库"><a href="#5-查看数据库" class="headerlink" title="5.查看数据库"></a>5.查看数据库</h3><blockquote>
-<p>show databases;<br>需要注意的是mysql命令后面一定要加分号，否则不会运行</p>
-</blockquote>
-<h3 id="6-创建数据库"><a href="#6-创建数据库" class="headerlink" title="6.创建数据库"></a>6.创建数据库</h3><blockquote>
-<p>create database name;</p>
-</blockquote>
-<h3 id="7-创建表"><a href="#7-创建表" class="headerlink" title="7.创建表"></a>7.创建表</h3><blockquote>
-<p>create table user(id int(3) auto_increment not null primary key, name char(8));</p>
-</blockquote>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li></ul>
 	</div>
 
       
@@ -837,10 +734,10 @@
 
 
   
-    <article id="post-Csharp生成条形码" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Koajs+sequelize+mysql环境搭建" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/02/Csharp生成条形码/" class="article-date">
+      <a href="/2016/03/02/Koajs+sequelize+mysql环境搭建/" class="article-date">
   	<time datetime="2016-03-02T12:10:33.000Z" itemprop="datePublished">2016-03-02</time>
 </a>
     </div>
@@ -854,7 +751,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/02/Csharp生成条形码/">C#生成条形码</a>
+      <a class="article-title" href="/2016/03/02/Koajs+sequelize+mysql环境搭建/">Koajs+sequelize+mysql环境搭建</a>
     </h1>
   
 
@@ -863,8 +760,31 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>首先在程序中添加zxing包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">using  zxing;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">EncodingOptions op = new EncodingOptions();</span><br><span class="line">op.Width = 400;</span><br><span class="line">op.Height = 200;</span><br><span class="line">BarcodeWriter writer = new BarcodeWriter();</span><br><span class="line">writer.Options = op;</span><br><span class="line">writer.Format = BarcodeFormat.CODE_39;</span><br><span class="line"></span><br><span class="line">Bitmap img = writer.Write(s);</span><br><span class="line"></span><br><span class="line">//自动保存图片到当前目录</span><br><span class="line">string fullUrl = dic+&quot;\\&quot;;</span><br><span class="line">if (Directory.Exists(fullUrl) == false)</span><br><span class="line">&#123;</span><br><span class="line">    Directory.CreateDirectory(fullUrl);   </span><br><span class="line">    //如果文件夹不存在，直接创建文件夹。</span><br><span class="line">&#125;</span><br><span class="line">var filename = fullUrl + name+ &quot;.jpg&quot;;</span><br><span class="line">img.Save(filename, ImageFormat.Jpeg);</span><br></pre></td></tr></table></figure>
+        <h3 id="1-首先通过npm-init-创建package-json文件"><a href="#1-首先通过npm-init-创建package-json文件" class="headerlink" title="1.首先通过npm init 创建package.json文件"></a>1.首先通过npm init 创建package.json文件</h3><blockquote>
+<p>$ npm init</p>
+<h3 id="2-安装Koajs"><a href="#2-安装Koajs" class="headerlink" title="2.安装Koajs"></a>2.安装Koajs</h3><p>$ npm install koa –save</p>
+</blockquote>
+<p>在根目录下创建一个app.js的文件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</span><br><span class="line"><span class="keyword">var</span> app = koa();</span><br><span class="line"></span><br><span class="line">app.use(<span class="function"><span class="keyword">function</span> *(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.body = <span class="string">'Hello Lxc'</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>);</span><br></pre></td></tr></table></figure></p>
+<h3 id="3-启动服务器"><a href="#3-启动服务器" class="headerlink" title="3.启动服务器"></a>3.启动服务器</h3><blockquote>
+<p>$ node –harmony app.js</p>
+</blockquote>
+<p>我们在浏览器中输入 <a href="http://localhost:3000就可以看见正确的输出了" target="_blank" rel="external">http://localhost:3000就可以看见正确的输出了</a></p>
+<h3 id="4-在工程中安装mysql和sequelize"><a href="#4-在工程中安装mysql和sequelize" class="headerlink" title="4.在工程中安装mysql和sequelize"></a>4.在工程中安装mysql和sequelize</h3><blockquote>
+<p>$ npm install mysql –save</p>
+<p>$  npm install sequelize –save</p>
+<h3 id="5-数据库配置"><a href="#5-数据库配置" class="headerlink" title="5.数据库配置"></a>5.数据库配置</h3><p>在根目录下新建一个models文件夹，在里面新建一个config.js的数据库配置文件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    db: &#123;</span><br><span class="line">        name: <span class="string">'mysql'</span>,</span><br><span class="line">        username: <span class="string">'root'</span>,</span><br><span class="line">        pwd: <span class="string">'xxxxxx'</span>,</span><br><span class="line">         host: <span class="string">'127.0.0.1'</span>,</span><br><span class="line">        database: <span class="string">'test'</span>,</span><br><span class="line">        toString() &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;this.name&#125;</span>://<span class="subst">$&#123;this.username&#125;</span>:<span class="subst">$&#123;this.pwd&#125;</span>@<span class="subst">$&#123;this.host&#125;</span>/<span class="subst">$&#123;this.database&#125;</span>`</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p>再新建一个db.js文件，引入config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by lxc on 16-3-3.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">var</span> Sequelize = <span class="built_in">require</span>(<span class="string">'sequelize'</span>);</span><br><span class="line"><span class="keyword">var</span> configs = <span class="built_in">require</span>(<span class="string">'./config.js'</span>);</span><br><span class="line"><span class="keyword">var</span> sequelize = <span class="keyword">new</span> Sequelize(configs.db.toString(), &#123;</span><br><span class="line">    logging: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">sequelize.define(<span class="string">'message'</span>, &#123;</span><br><span class="line">        title: Sequelize.TEXT,</span><br><span class="line">        link: Sequelize.TEXT&#125;);</span><br><span class="line"></span><br><span class="line">sequelize.sync(&#123;</span><br><span class="line">    force: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+<p>接下来我们在命令行中运行db.js</p>
+<blockquote>
+<p>node db.js</p>
+</blockquote>
+<p>完成后我们去sql查看是否创建成功</p>
+<blockquote>
+<p>mysql&gt; show columns from messages;<br>+———–+———-+——+—–+———+—————-+<br>| Field     | Type     | Null | Key | Default | Extra          |<br>+———–+———-+——+—–+———+—————-+<br>| id        | int(11)  | NO   | PRI | NULL    | auto_increment |<br>| title     | text     | YES  |     | NULL    |                |<br>| link      | text     | YES  |     | NULL    |                |<br>| createdAt | datetime | NO   |     | NULL    |                |<br>| updatedAt | datetime | NO   |     | NULL    |                |<br>+———–+———-+——+—–+———+—————-+<br>5 rows in set (0.00 sec)</p>
+</blockquote>
+<p>看到这个结果就是创建成功了^-^</p>
+<p>这个应用的结构还比较简单，正常开发的话肯定要比这复杂的多，项目的结构都要考虑，如果以后有时间再来补充吧。</p>
 
       
     </div>
@@ -873,7 +793,72 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
+    <article id="post-采用正则表达式获取地址栏参数" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/02/采用正则表达式获取地址栏参数/" class="article-date">
+  	<time datetime="2016-03-02T12:10:33.000Z" itemprop="datePublished">2016-03-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/02/采用正则表达式获取地址栏参数/">采用正则表达式获取地址栏参数</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-采用正则表达式获取地址栏参数："><a href="#1-采用正则表达式获取地址栏参数：" class="headerlink" title="1.采用正则表达式获取地址栏参数："></a>1.采用正则表达式获取地址栏参数：</h3><p>根据url和参数名获取参数值<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">GetQueryString</span>(<span class="params">name</span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">     <span class="keyword">var</span> reg = <span class="keyword">new</span> <span class="built_in">RegExp</span>(<span class="string">"(^|&amp;)"</span>+ name +<span class="string">"=([^&amp;]*)(&amp;|$)"</span>);</span><br><span class="line">     <span class="keyword">var</span> r = <span class="built_in">window</span>.location.search.substr(<span class="number">1</span>).match(reg);</span><br><span class="line">     <span class="keyword">if</span>(r!=<span class="literal">null</span>)<span class="keyword">return</span>  <span class="built_in">unescape</span>(r[<span class="number">2</span>]); <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 调用方法</span></span><br><span class="line">alert(GetQueryString(<span class="string">"参数名1"</span>));</span><br></pre></td></tr></table></figure></p>
+<h3 id="2-修改url参数值："><a href="#2-修改url参数值：" class="headerlink" title="2.修改url参数值："></a>2.修改url参数值：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">changeURLPar</span>(<span class="params">destiny, par, par_value</span>)</span><br><span class="line"></span>&#123;</span><br><span class="line">    <span class="keyword">var</span> pattern = par+<span class="string">'=([^&amp;]*)'</span>;</span><br><span class="line">    <span class="keyword">var</span> replaceText = par+<span class="string">'='</span>+par_value;</span><br><span class="line">    <span class="keyword">if</span> (destiny.match(pattern))</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">var</span> tmp = <span class="string">'/\\'</span>+par+<span class="string">'=[^&amp;]*/'</span>;</span><br><span class="line">        tmp = destiny.replace(<span class="built_in">eval</span>(tmp), replaceText);</span><br><span class="line">        <span class="keyword">return</span> (tmp);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (destiny.match(<span class="string">'[\?]'</span>))</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> destiny+<span class="string">'&amp;'</span>+ replaceText;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> destiny+<span class="string">'?'</span>+replaceText;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> destiny+<span class="string">'\n'</span>+par+<span class="string">'\n'</span>+par_value;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>destiny是目标字符串</li>
+<li>par是参数名</li>
+<li>par_value是参数要更改的值</li>
+<li>如果url中没有选定的参数值，会自动添加</li>
+<li>缺点是还不能删除参数<br>*</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 	</div>
 
       

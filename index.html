@@ -108,7 +108,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/C/" style="font-size: 15px;">C#</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/javascript-AngularJS/" style="font-size: 10px;">javascript AngularJS</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/兼容/" style="font-size: 10px;">兼容</a>
+						<a href="/tags/AngularJS/" style="font-size: 10px;">AngularJS</a> <a href="/tags/C/" style="font-size: 15px;">C#</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/兼容/" style="font-size: 10px;">兼容</a>
 					</div>
 				</section>
 				
@@ -178,7 +178,7 @@
   
     <div class="article-meta">
       <a href="/2016/03/16/AngularJS 学习笔记/" class="article-date">
-  	<time datetime="2016-03-16T11:37:00.636Z" itemprop="datePublished">2016-03-16</time>
+  	<time datetime="2016-03-15T16:00:00.000Z" itemprop="datePublished">2016-03-16</time>
 </a>
     </div>
   
@@ -231,7 +231,7 @@
 </ul>
 </blockquote>
 <h3 id="5-一些指令"><a href="#5-一些指令" class="headerlink" title="5. 一些指令"></a>5. 一些指令</h3><h4 id="（1）ng-repeat"><a href="#（1）ng-repeat" class="headerlink" title="（1）ng-repeat"></a>（1）ng-repeat</h4><p>这是一个循环指令<br>下面看个例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> list=[<span class="string">'lxc1'</span>,<span class="string">'lxc2'</span>,<span class="string">'lxc3'</span>];</span><br><span class="line">$scope.list=list;</span><br><span class="line">$scope.changelist=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  list.push(<span class="string">'lxc4'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">ng-repeat</span>=<span class="string">'i in list'</span>&gt;</span></span><br><span class="line">  &#123;&#123;i&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>  <span class="attr">ng-click</span>=<span class="string">'changelist()'</span>&gt;</span>changelist()<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">ng-repeat</span>=<span class="string">'i in list'</span>&gt;</span></span><br><span class="line">  &#123;&#123;i&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>  <span class="attr">ng-click</span>=<span class="string">'changelist()'</span>&gt;</span>changelist()<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>界面显示如下</p>
 <blockquote>
 <p>lxc1<br>  lxc2<br>  lxc3</p>
@@ -262,7 +262,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript-AngularJS/">javascript AngularJS</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AngularJS/">AngularJS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 	</div>
 
       

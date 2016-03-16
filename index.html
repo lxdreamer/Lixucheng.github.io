@@ -108,7 +108,7 @@
 				
 				<section class="switch-part switch-part2">
 					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/C/" style="font-size: 15px;">C#</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/兼容/" style="font-size: 10px;">兼容</a>
+						<a href="/tags/C/" style="font-size: 15px;">C#</a> <a href="/tags/git/" style="font-size: 15px;">git</a> <a href="/tags/jQuery/" style="font-size: 10px;">jQuery</a> <a href="/tags/javascript/" style="font-size: 20px;">javascript</a> <a href="/tags/javascript-AngularJS/" style="font-size: 10px;">javascript AngularJS</a> <a href="/tags/mysql/" style="font-size: 10px;">mysql</a> <a href="/tags/nodejs/" style="font-size: 10px;">nodejs</a> <a href="/tags/兼容/" style="font-size: 10px;">兼容</a>
 					</div>
 				</section>
 				
@@ -173,6 +173,116 @@
 </nav>
 
       <div class="body-wrap">
+  
+    <article id="post-AngularJS 学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/16/AngularJS 学习笔记/" class="article-date">
+  	<time datetime="2016-03-16T11:33:25.138Z" itemprop="datePublished">2016-03-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/16/AngularJS 学习笔记/">AnjularJS学习笔记</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>以前也接触过Angularjs，也用过一些，如今又回来重新看看，想理解的更深刻一些，写的可能不是很详细，但却是都是我学习的历程。</p>
+<h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1. 安装"></a>1. 安装</h3><p>安装方式可以自己选择，可以去网上下载，下载地址：<br><a href="http://angularjs.org；" target="_blank" rel="external">http://angularjs.org；</a></p>
+<p>也可以直接引用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;http://code.angularjs.org/angular-1.0.1.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
+<p>我是用的bower：</p>
+<blockquote>
+<p>bower install angularjs -save</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">'bower_components/angular/angular.js'</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="2-HelloWold"><a href="#2-HelloWold" class="headerlink" title="2. HelloWold"></a>2. HelloWold</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;body ng-app&gt;</span><br><span class="line">    hello &#123;&#123;&apos;world!&apos;&#125;&#125;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p>这样浏览器中就会打印出hello world！啦！</p>
+<h3 id="3-ng-app"><a href="#3-ng-app" class="headerlink" title="3. ng-app"></a>3. ng-app</h3><p><code>ng-app</code>指令标记了AngularJS脚本的作用域，在<code>&lt;html&gt;</code>中添加ng-app属性即说明整个<code>&lt;html&gt;</code>都是AngularJS脚本作用域。也可以在局部使用ng-app指令，像上面的例子<code>&lt;body ng-app&gt;</code>，则AngularJS脚本仅在该<code>&lt;body&gt;</code>中运行。<br><strong>注：全局仅可以有一个<code>ng-app</code></strong></p>
+<h3 id="4-ng-controller"><a href="#4-ng-controller" class="headerlink" title="4. ng-controller"></a>4. ng-controller</h3><p>什么是controller，这就涉及到<code>模型-视图-控制器（MVC）模式</code>了<br><code>ng-controller</code>命令就是绑定controller的命令,而他的作用域也只是在绑定的标签之下<br>看下面一段代码：<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">ng-app</span>=<span class="string">'myApp'</span>&gt;</span></span><br><span class="line">  hello &#123;&#123;'world!'&#125;&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controller</span>=<span class="string">'myCtrl'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span> &#123;&#123;myinfo.name&#125;&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controller</span>=<span class="string">'youCtrl'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span> &#123;&#123;youinfo.name&#125;&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = angular.module(<span class="string">'myApp'</span>, []);</span><br><span class="line">app.controller(<span class="string">'myCtrl'</span>, [<span class="string">'$scope'</span>,</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> people = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">      people.name=<span class="string">'lxc'</span>;</span><br><span class="line">      people.age=<span class="number">22</span>;</span><br><span class="line">      $scope.myinfo=people;</span><br><span class="line">  &#125;</span><br><span class="line">]);</span><br><span class="line">app.controller(<span class="string">'youCtrl'</span>, [<span class="string">'$scope'</span>,</span><br><span class="line">  <span class="function"><span class="keyword">function</span>(<span class="params">$scope</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> people = <span class="keyword">new</span> <span class="built_in">Object</span>();</span><br><span class="line">    people.name = <span class="string">'you'</span>;</span><br><span class="line">    people.age = <span class="number">2</span>;</span><br><span class="line">    $scope.youinfo = people;</span><br><span class="line">  &#125;</span><br><span class="line">]);</span><br></pre></td></tr></table></figure>
+<p>我在js中首先定义了一个<code>myApp</code>，在<code>myApp</code>下又定义了两个controller，<code>myCtrl</code>和<code>youCtrl</code>，在控制器中分别初始化两个<code>people</code>;<br>在html中我分别将两个控制器绑定<code>div</code>,在其中打印出<code>name</code><br>这时看看正确结果：</p>
+<blockquote>
+<p>hello world!<br>lxc<br>you</p>
+</blockquote>
+<p>下面我们来试验一下一个controller中的值可不可以在绑定的表情外部访问或者在其他controller中访问：<br>js不动，更改html代码如下<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span> <span class="attr">ng-app</span>=<span class="string">'myApp'</span>&gt;</span></span><br><span class="line">  hello &#123;&#123;'world!'&#125;&#125;</span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controller</span>=<span class="string">'myCtrl'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span> &#123;&#123;myinfo.name&#125;&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>test: &#123;&#123;youinfo.name&#125;&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-controller</span>=<span class="string">'youCtrl'</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span> &#123;&#123;youinfo.name&#125;&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>test: &#123;&#123;myinfo.name&#125;&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>test: &#123;&#123;youinfo.name&#125;&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span>&gt;</span>test: &#123;&#123;youinfo.name&#125;&#125; <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>结果如下：</p>
+<blockquote>
+<p>hello world!<br>lxc<br>test:<br>you<br>test:<br>test:<br>test:</p>
+</blockquote>
+<p>我们发现一个controller中的元素只能再自己的作用域中访问，那我们要想访问另一个controller中的元素怎么办呢？<br>答案是：</p>
+<blockquote>
+<ul>
+<li>利用作用域继承的原理，子控制器访问父级控制器中的内容。</li>
+<li>使用angularJS中的事件，也就是使用$on,$emit,$broadcast进行消息传递</li>
+<li>使用angularJS中的服务</li>
+</ul>
+</blockquote>
+<h3 id="5-一些指令"><a href="#5-一些指令" class="headerlink" title="5. 一些指令"></a>5. 一些指令</h3><h4 id="（1）ng-repeat"><a href="#（1）ng-repeat" class="headerlink" title="（1）ng-repeat"></a>（1）ng-repeat</h4><p>这是一个循环指令<br>下面看个例子：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> list=[<span class="string">'lxc1'</span>,<span class="string">'lxc2'</span>,<span class="string">'lxc3'</span>];</span><br><span class="line">$scope.list=list;</span><br><span class="line">$scope.changelist=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  list.push(<span class="string">'lxc4'</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line"><span class="tag">&lt;<span class="name">li</span> <span class="attr">ng-repeat</span>=<span class="string">'i in list'</span>&gt;</span></span><br><span class="line">  &#123;&#123;i&#125;&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span>  <span class="attr">ng-click</span>=<span class="string">'changelist()'</span>&gt;</span>changelist()<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>界面显示如下</p>
+<blockquote>
+<p>lxc1<br>  lxc2<br>  lxc3</p>
+</blockquote>
+<p>这时我们点击changelist（）看看发生了什么：</p>
+<blockquote>
+<p>lxc1<br>lxc2<br>lxc3<br>lxc4</p>
+</blockquote>
+<p>我们发现数组的更改直接反应在了html上，这就是angular的优点，以前的话还要用jQuery再在html中加一个标签，现在这些事情angular都为我们做了，是不是很方便^-^</p>
+<h3 id="（2）-ng-click"><a href="#（2）-ng-click" class="headerlink" title="（2） ng-click"></a>（2） ng-click</h3><p>这个已经在上面的例子总用到了，可以为标签的点击事件绑定对应作用域中的一个方法，也是很方便</p>
+<h3 id="（3）-ng-model"><a href="#（3）-ng-model" class="headerlink" title="（3） ng-model"></a>（3） ng-model</h3><p>ng-model 指令可以将输入域的值与 AngularJS 创建的变量绑定。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;input ng-model=&apos;name&apos; /&gt;   </span><br><span class="line">&lt;input value=&quot;&#123;&#123;name&#125;&#125;&quot; /&gt;</span><br><span class="line">&lt;input ng-model=&apos;name&apos; /&gt;</span><br><span class="line">&lt;div ng-bind=&quot;name&quot;&gt; &lt;/div&gt;</span><br></pre></td></tr></table></figure></p>
+<p>运行之后我们发现在第一个input中输入值可以下面三个标签上显示，改变第三个其他三个也会跟着改变，但是改变第二个就只会他自己改变，这也很好解释，因为第二个input只是用来显示name的值，并没有进行双向绑定</p>
+<p>下面我们看看在html中通过ng-model定义的name在js中可不可以访问<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">ng-model</span>=<span class="string">'name'</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">value</span>=<span class="string">"&#123;&#123;name&#125;&#125;"</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">ng-model</span>=<span class="string">'name'</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">ng-bind</span>=<span class="string">"name"</span>&gt;</span> <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-click</span>=<span class="string">'showevent()'</span>&gt;</span>alert()<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$scope.showevent=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  alert($scope.name);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在input中输入一个值，点击按钮，发现浏览器正确的输出了name的值</p>
+<h3 id="（4）-ng-options"><a href="#（4）-ng-options" class="headerlink" title="（4） ng-options"></a>（4） ng-options</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">select</span> <span class="attr">ng-model</span>=<span class="string">'select'</span> <span class="attr">ng-change</span>=<span class="string">'selectchange()'</span> <span class="attr">ng-options</span>=<span class="string">'i.url as i.site for i in sites'</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">""</span>&gt;</span>请选择<span class="tag">&lt;/<span class="name">option</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">select</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">$scope.sites = [</span><br><span class="line">      &#123;site : <span class="string">"Google"</span>, url : <span class="string">"http://www.google.com"</span>&#125;,</span><br><span class="line">      &#123;site : <span class="string">"Baidu"</span>, url : <span class="string">"http://www.baidu.com"</span>&#125;,</span><br><span class="line">      &#123;site : <span class="string">"Taobao"</span>, url : <span class="string">"http://www.taobao.com"</span>&#125;</span><br><span class="line">  ];</span><br><span class="line">$scope.selectchange=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    alert($scope.select);</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>刷新界面发现select已经正确的显示出来了，我们去改变他，发现浏览器也能正确的输出改变后的值</p>
+<p>在上面使用了<code>ng-change</code>，其实和正常的<code>onchange</code>事件类似，都是在值发生改变时触发</p>
+<h3 id="（5）ng-disabled"><a href="#（5）ng-disabled" class="headerlink" title="（5）ng-disabled"></a>（5）ng-disabled</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">ng-disabled</span>=<span class="string">'1'</span> <span class="attr">ng-click</span>=<span class="string">'changeselect()'</span> &gt;</span>changeselect<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这个很简单，当他的值为不等于0和false时，angular就会给button加上<code>disabled=&quot;disabled&quot;</code>属性</p>
+<p>当然其他指令还有很多，下次在介绍吧^-^</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript-AngularJS/">javascript AngularJS</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
   
     <article id="post-初次上传工程到github的方法(2)" class="article article-type-post" itemscope itemprop="blogPost">
   
@@ -609,6 +719,74 @@
 
 
   
+    <article id="post-jQuery ajax 简单使用" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/02/jQuery ajax 简单使用/" class="article-date">
+  	<time datetime="2016-03-02T12:10:33.000Z" itemprop="datePublished">2016-03-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/02/jQuery ajax 简单使用/">jQuery ajax 简单使用</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">   type: <span class="string">'get'</span>,</span><br><span class="line">   url: <span class="string">"change"</span> ,</span><br><span class="line">   data: &#123;</span><br><span class="line">       name：<span class="string">"lxc"</span></span><br><span class="line">   &#125; ,</span><br><span class="line">   success: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       alert(<span class="string">"提交成功"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>我在开发中就像上面这样用，下面简单介绍一下参数：</p>
+<blockquote>
+<ol>
+<li>type<br>get:以get的形式向目的url发送get请求类似如下<br><a href="http://localhost:8765/user/index/change?name=lxc&amp;num=12&amp;id=1" target="_blank" rel="external">http://localhost:8765/user/index/change?name=lxc&amp;num=12&amp;id=1</a><br>post:其数据作为HTTP消息的实体形式发送请求,一般用于数据较多的时候</li>
+<li>url<br>必须，就是请求的接受地址，默认是当前界面的地址</li>
+<li>data<br>请求中发送的数据</li>
+<li>success<br>请求成功后置信地个回调函数</li>
+<li>dataType<br>可选，规定预期的服务器响应的数据类型。<br>默认执行智能判断（xml、json、script 或 html）。</li>
+</ol>
+</blockquote>
+<p>还有一些比较灵活的用法<br>比如get请求时将数据集成在url里面<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">   type: <span class="string">'get'</span>,</span><br><span class="line">   url: <span class="string">"change?name=lxc&amp;num=12&amp;id=1"</span>,</span><br><span class="line">   success: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       alert(<span class="string">"提交成功"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-linux下mysql的安装与简单操作" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -726,155 +904,6 @@
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-jQuery ajax 简单使用" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/02/jQuery ajax 简单使用/" class="article-date">
-  	<time datetime="2016-03-02T12:10:33.000Z" itemprop="datePublished">2016-03-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/02/jQuery ajax 简单使用/">jQuery ajax 简单使用</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">   type: <span class="string">'get'</span>,</span><br><span class="line">   url: <span class="string">"change"</span> ,</span><br><span class="line">   data: &#123;</span><br><span class="line">       name：<span class="string">"lxc"</span></span><br><span class="line">   &#125; ,</span><br><span class="line">   success: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       alert(<span class="string">"提交成功"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>我在开发中就像上面这样用，下面简单介绍一下参数：</p>
-<blockquote>
-<ol>
-<li>type<br>get:以get的形式向目的url发送get请求类似如下<br><a href="http://localhost:8765/user/index/change?name=lxc&amp;num=12&amp;id=1" target="_blank" rel="external">http://localhost:8765/user/index/change?name=lxc&amp;num=12&amp;id=1</a><br>post:其数据作为HTTP消息的实体形式发送请求,一般用于数据较多的时候</li>
-<li>url<br>必须，就是请求的接受地址，默认是当前界面的地址</li>
-<li>data<br>请求中发送的数据</li>
-<li>success<br>请求成功后置信地个回调函数</li>
-<li>dataType<br>可选，规定预期的服务器响应的数据类型。<br>默认执行智能判断（xml、json、script 或 html）。</li>
-</ol>
-</blockquote>
-<p>还有一些比较灵活的用法<br>比如get请求时将数据集成在url里面<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">   type: <span class="string">'get'</span>,</span><br><span class="line">   url: <span class="string">"change?name=lxc&amp;num=12&amp;id=1"</span>,</span><br><span class="line">   success: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       alert(<span class="string">"提交成功"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-Koajs+sequelize+mysql环境搭建" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/02/Koajs+sequelize+mysql环境搭建/" class="article-date">
-  	<time datetime="2016-03-02T12:10:33.000Z" itemprop="datePublished">2016-03-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/02/Koajs+sequelize+mysql环境搭建/">Koajs+sequelize+mysql环境搭建</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-首先通过npm-init-创建package-json文件"><a href="#1-首先通过npm-init-创建package-json文件" class="headerlink" title="1.首先通过npm init 创建package.json文件"></a>1.首先通过npm init 创建package.json文件</h3><blockquote>
-<p>$ npm init</p>
-<h3 id="2-安装Koajs"><a href="#2-安装Koajs" class="headerlink" title="2.安装Koajs"></a>2.安装Koajs</h3><p>$ npm install koa –save</p>
-</blockquote>
-<p>在根目录下创建一个app.js的文件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> koa = <span class="built_in">require</span>(<span class="string">'koa'</span>);</span><br><span class="line"><span class="keyword">var</span> app = koa();</span><br><span class="line"></span><br><span class="line">app.use(<span class="function"><span class="keyword">function</span> *(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.body = <span class="string">'Hello Lxc'</span>;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">app.listen(<span class="number">3000</span>);</span><br></pre></td></tr></table></figure></p>
-<h3 id="3-启动服务器"><a href="#3-启动服务器" class="headerlink" title="3.启动服务器"></a>3.启动服务器</h3><blockquote>
-<p>$ node –harmony app.js</p>
-</blockquote>
-<p>我们在浏览器中输入 <a href="http://localhost:3000就可以看见正确的输出了" target="_blank" rel="external">http://localhost:3000就可以看见正确的输出了</a></p>
-<h3 id="4-在工程中安装mysql和sequelize"><a href="#4-在工程中安装mysql和sequelize" class="headerlink" title="4.在工程中安装mysql和sequelize"></a>4.在工程中安装mysql和sequelize</h3><blockquote>
-<p>$ npm install mysql –save</p>
-<p>$  npm install sequelize –save</p>
-<h3 id="5-数据库配置"><a href="#5-数据库配置" class="headerlink" title="5.数据库配置"></a>5.数据库配置</h3><p>在根目录下新建一个models文件夹，在里面新建一个config.js的数据库配置文件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">    db: &#123;</span><br><span class="line">        name: <span class="string">'mysql'</span>,</span><br><span class="line">        username: <span class="string">'root'</span>,</span><br><span class="line">        pwd: <span class="string">'xxxxxx'</span>,</span><br><span class="line">         host: <span class="string">'127.0.0.1'</span>,</span><br><span class="line">        database: <span class="string">'test'</span>,</span><br><span class="line">        toString() &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">`<span class="subst">$&#123;this.name&#125;</span>://<span class="subst">$&#123;this.username&#125;</span>:<span class="subst">$&#123;this.pwd&#125;</span>@<span class="subst">$&#123;this.host&#125;</span>/<span class="subst">$&#123;this.database&#125;</span>`</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
-</blockquote>
-<p>再新建一个db.js文件，引入config.js<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span><br><span class="line"> * Created by lxc on 16-3-3.</span><br><span class="line"> */</span></span><br><span class="line"><span class="keyword">var</span> Sequelize = <span class="built_in">require</span>(<span class="string">'sequelize'</span>);</span><br><span class="line"><span class="keyword">var</span> configs = <span class="built_in">require</span>(<span class="string">'./config.js'</span>);</span><br><span class="line"><span class="keyword">var</span> sequelize = <span class="keyword">new</span> Sequelize(configs.db.toString(), &#123;</span><br><span class="line">    logging: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">sequelize.define(<span class="string">'message'</span>, &#123;</span><br><span class="line">        title: Sequelize.TEXT,</span><br><span class="line">        link: Sequelize.TEXT&#125;);</span><br><span class="line"></span><br><span class="line">sequelize.sync(&#123;</span><br><span class="line">    force: <span class="literal">true</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
-<p>接下来我们在命令行中运行db.js</p>
-<blockquote>
-<p>node db.js</p>
-</blockquote>
-<p>完成后我们去sql查看是否创建成功</p>
-<blockquote>
-<p>mysql&gt; show columns from messages;<br>+———–+———-+——+—–+———+—————-+<br>| Field     | Type     | Null | Key | Default | Extra          |<br>+———–+———-+——+—–+———+—————-+<br>| id        | int(11)  | NO   | PRI | NULL    | auto_increment |<br>| title     | text     | YES  |     | NULL    |                |<br>| link      | text     | YES  |     | NULL    |                |<br>| createdAt | datetime | NO   |     | NULL    |                |<br>| updatedAt | datetime | NO   |     | NULL    |                |<br>+———–+———-+——+—–+———+—————-+<br>5 rows in set (0.00 sec)</p>
-</blockquote>
-<p>看到这个结果就是创建成功了^-^</p>
-<p>这个应用的结构还比较简单，正常开发的话肯定要比这复杂的多，项目的结构都要考虑，如果以后有时间再来补充吧。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nodejs/">nodejs</a></li></ul>
 	</div>
 
       

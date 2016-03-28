@@ -4,30 +4,18 @@
   <meta charset="utf-8">
   
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <title>jQuery ajax 简单使用 | 李续铖的博客</title>
+  <title>js 原型方法 类方法 对象方法 | 李续铖的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12345678910$.ajax(&amp;#123;   type: &apos;get&apos;,   url: &quot;change&quot; ,   data: &amp;#123;       name：&quot;lxc&quot;   &amp;#125; ,   success: function()&amp;#123;       alert(&quot;提交成功&quot;);   &amp;#125;&amp;#125;);
-我在开发中就像上面这样用，下面简单介绍一下参数：
-
-
-typege">
+  <meta name="description" content="1234567891011121314151617181920212223var people=function (name) &amp;#123;  this.name=name;  //对象方法  this.say=function () &amp;#123;    console.log(this.name);  &amp;#125;&amp;#125;//类方法people.ssay=function () &amp;#123;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="jQuery ajax 简单使用">
-<meta property="og:url" content="http://yoursite.com/2016/03/02/jQuery ajax 简单使用/index.html">
+<meta property="og:title" content="js 原型方法 类方法 对象方法">
+<meta property="og:url" content="http://yoursite.com/2016/03/28/js 原型方法 类方法 对象方法/index.html">
 <meta property="og:site_name" content="李续铖的博客">
-<meta property="og:description" content="12345678910$.ajax(&amp;#123;   type: &apos;get&apos;,   url: &quot;change&quot; ,   data: &amp;#123;       name：&quot;lxc&quot;   &amp;#125; ,   success: function()&amp;#123;       alert(&quot;提交成功&quot;);   &amp;#125;&amp;#125;);
-我在开发中就像上面这样用，下面简单介绍一下参数：
-
-
-typege">
-<meta property="og:updated_time" content="2016-03-04T07:41:01.190Z">
+<meta property="og:description" content="1234567891011121314151617181920212223var people=function (name) &amp;#123;  this.name=name;  //对象方法  this.say=function () &amp;#123;    console.log(this.name);  &amp;#125;&amp;#125;//类方法people.ssay=function () &amp;#123;">
+<meta property="og:updated_time" content="2016-03-28T06:49:44.082Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="jQuery ajax 简单使用">
-<meta name="twitter:description" content="12345678910$.ajax(&amp;#123;   type: &apos;get&apos;,   url: &quot;change&quot; ,   data: &amp;#123;       name：&quot;lxc&quot;   &amp;#125; ,   success: function()&amp;#123;       alert(&quot;提交成功&quot;);   &amp;#125;&amp;#125;);
-我在开发中就像上面这样用，下面简单介绍一下参数：
-
-
-typege">
+<meta name="twitter:title" content="js 原型方法 类方法 对象方法">
+<meta name="twitter:description" content="1234567891011121314151617181920212223var people=function (name) &amp;#123;  this.name=name;  //对象方法  this.say=function () &amp;#123;    console.log(this.name);  &amp;#125;&amp;#125;//类方法people.ssay=function () &amp;#123;">
   
   
     <link rel="icon" href="/favicon.png">
@@ -185,11 +173,11 @@ typege">
 	</div>
 </nav>
 
-      <div class="body-wrap"><article id="post-jQuery ajax 简单使用" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-js 原型方法 类方法 对象方法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/02/jQuery ajax 简单使用/" class="article-date">
-  	<time datetime="2016-03-02T12:10:33.000Z" itemprop="datePublished">2016-03-02</time>
+      <a href="/2016/03/28/js 原型方法 类方法 对象方法/" class="article-date">
+  	<time datetime="2016-03-28T06:47:55.167Z" itemprop="datePublished">2016-03-28</time>
 </a>
     </div>
   
@@ -202,7 +190,7 @@ typege">
         
   
     <h1 class="article-title" itemprop="name">
-      jQuery ajax 简单使用
+      js 原型方法 类方法 对象方法
     </h1>
   
 
@@ -211,7 +199,7 @@ typege">
       <div class="article-info article-info-post">
         
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
 	</div>
 
         
@@ -222,18 +210,11 @@ typege">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">   type: <span class="string">'get'</span>,</span><br><span class="line">   url: <span class="string">"change"</span> ,</span><br><span class="line">   data: &#123;</span><br><span class="line">       name：<span class="string">"lxc"</span></span><br><span class="line">   &#125; ,</span><br><span class="line">   success: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       alert(<span class="string">"提交成功"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>我在开发中就像上面这样用，下面简单介绍一下参数：</p>
-<blockquote>
-<ol>
-<li>type<br>get:以get的形式向目的url发送get请求类似如下<br><a href="http://localhost:8765/user/index/change?name=lxc&amp;num=12&amp;id=1" target="_blank" rel="external">http://localhost:8765/user/index/change?name=lxc&amp;num=12&amp;id=1</a><br>post:其数据作为HTTP消息的实体形式发送请求,一般用于数据较多的时候</li>
-<li>url<br>必须，就是请求的接受地址，默认是当前界面的地址</li>
-<li>data<br>请求中发送的数据</li>
-<li>success<br>请求成功后置信地个回调函数</li>
-<li>dataType<br>可选，规定预期的服务器响应的数据类型。<br>默认执行智能判断（xml、json、script 或 html）。</li>
-</ol>
-</blockquote>
-<p>还有一些比较灵活的用法<br>比如get请求时将数据集成在url里面<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">   type: <span class="string">'get'</span>,</span><br><span class="line">   url: <span class="string">"change?name=lxc&amp;num=12&amp;id=1"</span>,</span><br><span class="line">   success: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       alert(<span class="string">"提交成功"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> people=<span class="function"><span class="keyword">function</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name=name;</span><br><span class="line">  <span class="comment">//对象方法</span></span><br><span class="line">  <span class="keyword">this</span>.say=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//类方法</span></span><br><span class="line">people.ssay=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'this:'</span>+<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p1=<span class="keyword">new</span> people(<span class="string">'p1'</span>);</span><br><span class="line"><span class="keyword">var</span> p2=<span class="keyword">new</span> people(<span class="string">'p2'</span>);</span><br><span class="line"><span class="comment">//原型方法</span></span><br><span class="line">people.prototype.psay=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'this:'</span>+<span class="keyword">this</span>.name);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">p1.say();</span><br><span class="line">p2.say();</span><br><span class="line">p1.psay();</span><br><span class="line">p2.psay();</span><br><span class="line">people.ssay();</span><br></pre></td></tr></table></figure>
+<p>结果：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">p1</span><br><span class="line">p2</span><br><span class="line"><span class="keyword">this</span>:p1</span><br><span class="line"><span class="keyword">this</span>:p2</span><br><span class="line"><span class="keyword">this</span>:<span class="function"><span class="keyword">function</span> (<span class="params">name</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.name=name;</span><br><span class="line">  <span class="comment">//对象方法</span></span><br><span class="line">  <span class="keyword">this</span>.say=<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="1-对象方法"><a href="#1-对象方法" class="headerlink" title="1. 对象方法"></a>1. 对象方法</h3><p>对象方法就是每个对象都会包括的一个方法，每个类的实例都可以调用</p>
+<h3 id="2-类方法"><a href="#2-类方法" class="headerlink" title="2. 类方法"></a>2. 类方法</h3><p>每个类都相当于一个Object，类方法指的是这个Object里面的方法，只能通过类的名字调用，this指向这个类，不能通过实例调用</p>
+<h3 id="3-原型方法"><a href="#3-原型方法" class="headerlink" title="3. 原型方法"></a>3. 原型方法</h3><p>原型方法主要是用来对对已有的对象进行扩展的，看上面的代码，在对象已经实例化的时候添加原型方法，这时候每个实例都可以调用</p>
 
       
     </div>
@@ -243,18 +224,9 @@ typege">
     
 <nav id="article-nav">
   
-    <a href="/2016/03/02/Csharp生成条形码/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          C#生成条形码
-        
-      </div>
-    </a>
   
-  
-    <a href="/2016/03/02/linux下mysql的安装与简单操作/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">linux下mysql的安装与简单操作</div>
+    <a href="/2016/03/16/AngularJS 学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">AnjularJS学习笔记</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -289,7 +261,7 @@ typege">
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="jQuery ajax 简单使用" data-title="jQuery ajax 简单使用" data-url="http://yoursite.com/2016/03/02/jQuery ajax 简单使用/"></div>
+	<div class="ds-thread" data-thread-key="js 原型方法 类方法 对象方法" data-title="js 原型方法 类方法 对象方法" data-url="http://yoursite.com/2016/03/28/js 原型方法 类方法 对象方法/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

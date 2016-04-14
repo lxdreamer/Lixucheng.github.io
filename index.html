@@ -174,6 +174,92 @@
 
       <div class="body-wrap">
   
+    <article id="post-Simple-Calendar开发文档" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/14/Simple-Calendar开发文档/" class="article-date">
+  	<time datetime="2016-04-14T04:42:47.069Z" itemprop="datePublished">2016-04-14</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/14/Simple-Calendar开发文档/">Simple-Calendar开发文档</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##获取Simple-Calendar<br>从GitHub上下载 <a href="https://github.com/Lixucheng/Simple-Calendar" target="_blank" rel="external">链接</a></p>
+<p>##引入资源</p>
+<p>使用日历插件前首先要引用资源：JS CSS<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel=<span class="string">"stylesheet"</span> type=<span class="string">"text/css"</span> href=<span class="string">"css/simple-calendar.css"</span>&gt;</span><br><span class="line"></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/jacascrip"</span> <span class="attr">src</span>=<span class="string">"js/simple-calendar.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p>##初始化一个日历</p>
+<p>首先为calendar准备一个容器，可以设置大小，也可以在options中设置，不设置的话自动设为默认<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">'container'</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="javascript"></span><br><span class="line">  <span class="keyword">var</span> myCalendar = <span class="keyword">new</span> SimpleCalendar(<span class="string">'#container'</span>);</span><br><span class="line"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>这样一个日历就诞生了 ^-^</p>
+<p>##配置项说明<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> options = &#123;</span><br><span class="line">      width: <span class="string">'500px'</span>,</span><br><span class="line">      height: <span class="string">'500px'</span>,</span><br><span class="line">      language: <span class="string">'CH'</span>, <span class="comment">//语言</span></span><br><span class="line">      showLunarCalendar: <span class="literal">true</span>, <span class="comment">//阴历</span></span><br><span class="line">      showHoliday: <span class="literal">true</span>, <span class="comment">//休假</span></span><br><span class="line">      showFestival: <span class="literal">true</span>, <span class="comment">//节日</span></span><br><span class="line">      showLunarFestival: <span class="literal">true</span>, <span class="comment">//农历节日</span></span><br><span class="line">      showSolarTerm: <span class="literal">true</span>, <span class="comment">//节气</span></span><br><span class="line">      showMark: <span class="literal">true</span>, <span class="comment">//标记</span></span><br><span class="line">      timeRange: &#123;</span><br><span class="line">        startYear: <span class="number">1900</span>,</span><br><span class="line">        endYear: <span class="number">2049</span></span><br><span class="line">      &#125;,</span><br><span class="line">      mark: &#123;</span><br><span class="line">        <span class="string">'2016-5-5'</span>: <span class="string">'上学'</span></span><br><span class="line">      &#125;,</span><br><span class="line">      theme: &#123;</span><br><span class="line">        changeAble: <span class="literal">false</span>,</span><br><span class="line">        weeks: &#123;</span><br><span class="line">          backgroundColor: <span class="string">'#FBEC9C'</span>,</span><br><span class="line">          fontColor: <span class="string">'#4A4A4A'</span>,</span><br><span class="line">          fontSize: <span class="string">'20px'</span>,</span><br><span class="line">        &#125;,</span><br><span class="line">        days: &#123;</span><br><span class="line">          backgroundColor: <span class="string">'#ffffff'</span>,</span><br><span class="line">          fontColor: <span class="string">'#565555'</span>,</span><br><span class="line">          fontSize: <span class="string">'24px'</span></span><br><span class="line">        &#125;,</span><br><span class="line">        todaycolor: <span class="string">'orange'</span>,</span><br><span class="line">        activeSelectColor: <span class="string">'orange'</span>,</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="国际化"><a href="#国际化" class="headerlink" title="国际化"></a>国际化</h3><blockquote>
+<p>language：<br>语言的话目前只支持中文和英文，分别对应’CH’,’EN’</p>
+</blockquote>
+<p>如果想要加更多的语言或者更改现在的显示，可以直接更改languageData内容</p>
+<h3 id="节日显示配置"><a href="#节日显示配置" class="headerlink" title="节日显示配置"></a>节日显示配置</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">showLunarCalendar: <span class="literal">true</span>, <span class="comment">//是否显示阴历日期</span></span><br><span class="line">showHoliday: <span class="literal">true</span>,       <span class="comment">//是否显示休假休假</span></span><br><span class="line">showFestival: <span class="literal">true</span>,      <span class="comment">//是否显示国际节日</span></span><br><span class="line">showLunarFestival: <span class="literal">true</span>, <span class="comment">//是否显示农历节日</span></span><br><span class="line">showSolarTerm: <span class="literal">true</span>,     <span class="comment">//是否显示节气</span></span><br><span class="line">showMark: <span class="literal">true</span>,          <span class="comment">//是否显示标记日期</span></span><br></pre></td></tr></table></figure>
+<h3 id="时间范围"><a href="#时间范围" class="headerlink" title="时间范围"></a>时间范围</h3><p>这个时间范围设置的是下拉框中的年数范围<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">timeRange: &#123;</span><br><span class="line">    startYear: <span class="number">1900</span>,</span><br><span class="line">    endYear: <span class="number">2049</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h3 id="标记日期"><a href="#标记日期" class="headerlink" title="标记日期"></a>标记日期</h3><p>标记日期配置只有在 showMark 为 true 时才会生效</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mark: &#123;</span><br><span class="line">        <span class="string">'2016-5-5'</span>: <span class="string">'上学'</span></span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+<p>这样就会在日历的对应日期上面添加标记，当鼠标停留时显示输入的信息</p>
+<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">theme: &#123;</span><br><span class="line">       changeAble: <span class="literal">false</span>,</span><br><span class="line">       weeks: &#123;</span><br><span class="line">         backgroundColor: <span class="string">'#FBEC9C'</span>,</span><br><span class="line">         fontColor: <span class="string">'#4A4A4A'</span>,</span><br><span class="line">         fontSize: <span class="string">'20px'</span>,</span><br><span class="line">       &#125;,</span><br><span class="line">       days: &#123;</span><br><span class="line">         backgroundColor: <span class="string">'#ffffff'</span>,</span><br><span class="line">         fontColor: <span class="string">'#565555'</span>,</span><br><span class="line">         fontSize: <span class="string">'24px'</span></span><br><span class="line">       &#125;,</span><br><span class="line">       todaycolor: <span class="string">'orange'</span>,</span><br><span class="line">       activeSelectColor: <span class="string">'orange'</span>,</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+<p>主题配置只有在changeAble 为 true 时才会生效<br>weeks 设置的是星期一栏的主题，分别对应背景颜色，字体颜色，字体大小<br>days  设置的是日期的主题，参数同上<br>todaycolor 设置的是当天的日期背景颜色<br>activeSelectColor 设置的是鼠标滑过事件对应日期的边框颜色</p>
+<h2 id="事件接口说明"><a href="#事件接口说明" class="headerlink" title="事件接口说明"></a>事件接口说明</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">myCalendar.updateSize(<span class="string">'500px'</span>, <span class="string">'500px'</span>);</span><br><span class="line">myCalendar.addMark(<span class="string">'2016-3-7'</span>, <span class="string">'test'</span>);</span><br><span class="line">myCalendar.setLanguage(<span class="string">'EN'</span>)</span><br><span class="line">myCalendar.showFestival(<span class="literal">false</span>);</span><br><span class="line">myCalendar.showLunarCalendar(<span class="literal">false</span>);</span><br><span class="line">myCalendar.showHoliday(<span class="literal">false</span>);</span><br><span class="line">myCalendar.showSolarTerm(<span class="literal">false</span>);</span><br><span class="line">myCalendar.showLunarFestival(<span class="literal">false</span>);</span><br><span class="line">myCalendar.showMark(<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
+<h3 id="updateSize-width-height"><a href="#updateSize-width-height" class="headerlink" title="updateSize(width,height)"></a>updateSize(width,height)</h3><blockquote>
+<p>调整日历大小，会自动根据大小调整对应的样式</p>
+</blockquote>
+<h3 id="addMark-day-info"><a href="#addMark-day-info" class="headerlink" title="addMark(day, info)"></a>addMark(day, info)</h3><blockquote>
+<p>day   是一个可以确定一个日期的字符串<br>info  是要显示的信息</p>
+</blockquote>
+<h3 id="setLenguage-languageStr"><a href="#setLenguage-languageStr" class="headerlink" title="setLenguage(languageStr)"></a>setLenguage(languageStr)</h3><blockquote>
+<p>设置语言，目前支持的语言有’CH’,’EN’<br>如果想要增加语言，请在languageData中修改</p>
+</blockquote>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//关闭或者显示国际节日</span></span><br><span class="line">showFestival(<span class="literal">false</span>);</span><br><span class="line"><span class="comment">//关闭或者显示阴历日期</span></span><br><span class="line">showLunarCalendar(<span class="literal">false</span>);</span><br><span class="line"><span class="comment">//关闭或者显示假期</span></span><br><span class="line">showHoliday(<span class="literal">false</span>);</span><br><span class="line"><span class="comment">//关闭或者显示二十四节气</span></span><br><span class="line">showSolarTerm(<span class="literal">false</span>);</span><br><span class="line"><span class="comment">//关闭或者显示阴历节日</span></span><br><span class="line">showLunarFestival(<span class="literal">false</span>);</span><br><span class="line"><span class="comment">//关闭或者显示标记</span></span><br><span class="line">showMark(<span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+
+
+  
     <article id="post-js 原型方法 类方法 对象方法" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -780,10 +866,10 @@
 
 
   
-    <article id="post-jQuery ajax 简单使用" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-Csharp生成条形码" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/03/02/jQuery ajax 简单使用/" class="article-date">
+      <a href="/2016/03/02/Csharp生成条形码/" class="article-date">
   	<time datetime="2016-03-02T12:10:33.000Z" itemprop="datePublished">2016-03-02</time>
 </a>
     </div>
@@ -797,7 +883,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/02/jQuery ajax 简单使用/">jQuery ajax 简单使用</a>
+      <a class="article-title" href="/2016/03/02/Csharp生成条形码/">C#生成条形码</a>
     </h1>
   
 
@@ -806,18 +892,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">   type: <span class="string">'get'</span>,</span><br><span class="line">   url: <span class="string">"change"</span> ,</span><br><span class="line">   data: &#123;</span><br><span class="line">       name：<span class="string">"lxc"</span></span><br><span class="line">   &#125; ,</span><br><span class="line">   success: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       alert(<span class="string">"提交成功"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<p>我在开发中就像上面这样用，下面简单介绍一下参数：</p>
-<blockquote>
-<ol>
-<li>type<br>get:以get的形式向目的url发送get请求类似如下<br><a href="http://localhost:8765/user/index/change?name=lxc&amp;num=12&amp;id=1" target="_blank" rel="external">http://localhost:8765/user/index/change?name=lxc&amp;num=12&amp;id=1</a><br>post:其数据作为HTTP消息的实体形式发送请求,一般用于数据较多的时候</li>
-<li>url<br>必须，就是请求的接受地址，默认是当前界面的地址</li>
-<li>data<br>请求中发送的数据</li>
-<li>success<br>请求成功后置信地个回调函数</li>
-<li>dataType<br>可选，规定预期的服务器响应的数据类型。<br>默认执行智能判断（xml、json、script 或 html）。</li>
-</ol>
-</blockquote>
-<p>还有一些比较灵活的用法<br>比如get请求时将数据集成在url里面<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(&#123;</span><br><span class="line">   type: <span class="string">'get'</span>,</span><br><span class="line">   url: <span class="string">"change?name=lxc&amp;num=12&amp;id=1"</span>,</span><br><span class="line">   success: <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">       alert(<span class="string">"提交成功"</span>);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure></p>
+        <p>首先在程序中添加zxing包<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">using  zxing;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">EncodingOptions op = new EncodingOptions();</span><br><span class="line">op.Width = 400;</span><br><span class="line">op.Height = 200;</span><br><span class="line">BarcodeWriter writer = new BarcodeWriter();</span><br><span class="line">writer.Options = op;</span><br><span class="line">writer.Format = BarcodeFormat.CODE_39;</span><br><span class="line"></span><br><span class="line">Bitmap img = writer.Write(s);</span><br><span class="line"></span><br><span class="line">//自动保存图片到当前目录</span><br><span class="line">string fullUrl = dic+&quot;\\&quot;;</span><br><span class="line">if (Directory.Exists(fullUrl) == false)</span><br><span class="line">&#123;</span><br><span class="line">    Directory.CreateDirectory(fullUrl);   </span><br><span class="line">    //如果文件夹不存在，直接创建文件夹。</span><br><span class="line">&#125;</span><br><span class="line">var filename = fullUrl + name+ &quot;.jpg&quot;;</span><br><span class="line">img.Save(filename, ImageFormat.Jpeg);</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -826,84 +902,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jQuery/">jQuery</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-
-
-  
-    <article id="post-linux下mysql的安装与简单操作" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/02/linux下mysql的安装与简单操作/" class="article-date">
-  	<time datetime="2016-03-02T12:10:33.000Z" itemprop="datePublished">2016-03-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/02/linux下mysql的安装与简单操作/">linux下mysql的安装与简单操作</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-安装命令如下"><a href="#1-安装命令如下" class="headerlink" title="1.安装命令如下"></a>1.安装命令如下</h3><blockquote>
-<p>sudo apt-get install mysql-server<br>然后按照提示输入数据库密码即可</p>
-</blockquote>
-<h3 id="2-启动mysql命令"><a href="#2-启动mysql命令" class="headerlink" title="2.启动mysql命令"></a>2.启动mysql命令</h3><blockquote>
-<p>service mysql start<br>这时系统会提示输入密码，正确输入后没有报错就是启动成功了</p>
-</blockquote>
-<h3 id="3-关闭mysql服务"><a href="#3-关闭mysql服务" class="headerlink" title="3.关闭mysql服务"></a>3.关闭mysql服务</h3><blockquote>
-<p>service mysql stop</p>
-</blockquote>
-<h3 id="4-连接数据库"><a href="#4-连接数据库" class="headerlink" title="4.连接数据库"></a>4.连接数据库</h3><blockquote>
-<p>mysql -u root -p<br>这时系统会提示输入密码，正确输入后会进去mysql命令行下</p>
-</blockquote>
-<h3 id="5-查看数据库"><a href="#5-查看数据库" class="headerlink" title="5.查看数据库"></a>5.查看数据库</h3><blockquote>
-<p>show databases;<br>需要注意的是mysql命令后面一定要加分号，否则不会运行</p>
-</blockquote>
-<h3 id="6-创建数据库"><a href="#6-创建数据库" class="headerlink" title="6.创建数据库"></a>6.创建数据库</h3><blockquote>
-<p>create database name;</p>
-</blockquote>
-<h3 id="7-创建表"><a href="#7-创建表" class="headerlink" title="7.创建表"></a>7.创建表</h3><blockquote>
-<p>create table user(id int(3) auto_increment not null primary key, name char(8));</p>
-</blockquote>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/">mysql</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/C/">C#</a></li></ul>
 	</div>
 
       

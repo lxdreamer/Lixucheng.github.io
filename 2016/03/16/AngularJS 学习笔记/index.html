@@ -223,7 +223,7 @@
 <blockquote>
 <p>bower install angularjs -save</p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">'bower_components/angular/angular.js'</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">'bower_components/angular/angular.js'</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="2-HelloWold"><a href="#2-HelloWold" class="headerlink" title="2. HelloWold"></a>2. HelloWold</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;body ng-app&gt;</span><br><span class="line">    hello &#123;&#123;&apos;world!&apos;&#125;&#125;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
 <p>这样浏览器中就会打印出hello world！啦！</p>
 <h3 id="3-ng-app"><a href="#3-ng-app" class="headerlink" title="3. ng-app"></a>3. ng-app</h3><p><code>ng-app</code>指令标记了AngularJS脚本的作用域，在<code>&lt;html&gt;</code>中添加ng-app属性即说明整个<code>&lt;html&gt;</code>都是AngularJS脚本作用域。也可以在局部使用ng-app指令，像上面的例子<code>&lt;body ng-app&gt;</code>，则AngularJS脚本仅在该<code>&lt;body&gt;</code>中运行。<br><strong>注：全局仅可以有一个<code>ng-app</code></strong></p>
